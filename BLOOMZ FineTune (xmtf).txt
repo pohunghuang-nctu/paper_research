@@ -1,0 +1,13 @@
+好的，以下是您提供的信息的筆記：
+
+BLOOMZ
+
+下載預先訓練的模型檢查點，形狀為 PP=12，TP=4，DP=4。如果您想重塑模型，還需要下載通用檢查點。如果您想繼續微調，應該使用我們微調過的檢查點，形狀為 PP=72，TP=1，DP=4。
+設置訓練代碼：git clone -b t0loading https://github.com/bigscience-workshop/Megatron-DeepSpeed 並按照其安裝指南創建一個帶有必要軟件包的環境。
+下載 Megatron-DeepSpeed 處理過的 xP3megds 或者自己重新預處理它以供 Megatron-DeepSpeed 使用，方法是下載 xP3 ，刪除 merged_{lang}.jsonl 文件並使用此處的腳本進行預處理。
+設置並運行訓練腳本：我們使用 SLURM 腳本，在 bigscience-workshop/bigscience/train/tr13-mtf 中可用，稱作 xp3capmixnewcodelonglossseq。例如這是用來訓練 bloomz 的腳本。需要修改的重要部分包括：
+#SBATCH 變量，如節點、GPU、時間等。我們的 SLURM 指南在這裡
+source $six_ALL_CCFRWORK/start-tr13f-6B3-ml-t0 指向您自己通過 Megatron-DeepSpeed 設置的 conda 環境
+PATH 環境變量，特別是
+TRAIN_DATA_PATH 和 VALID_DATA_PATH ，它們指向指向您處理過的訓練和驗證數據文件。我們在此存儲庫中提供了我們的文件（xp3capmixnewcodelong_train.txt 和 xp3capmixnewcodelong_validation.txt），但您可能希望更改其中的路徑。每種語言所占百分比基於 xP3 中每種語言所占比例計算得出。
+PP_SIZE=72、TP_SIZE=1 和 BATCH SIZE 等指定布局。這將取決於您可用的硬件。如果更改了布局，则可能需要重塑模型。重塑時需要使用通用檢查點並在腳本中使用 --universal 標志。我們建議在此之後立即保存一個新檢查點然後不帶 --universal 繼續訓
