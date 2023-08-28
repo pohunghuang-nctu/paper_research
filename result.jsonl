@@ -1,0 +1,164 @@
+{"task_id": "SingleLineInfilling/HumanEval/0/L2", "completion": "            if idx != idx2:"}
+{"task_id": "SingleLineInfilling/HumanEval/1/L1", "completion": "    current_string = []"}
+{"task_id": "SingleLineInfilling/HumanEval/2/L0", "completion": "    integer_part = int(number)\nreturn number - integer_part"}
+{"task_id": "SingleLineInfilling/HumanEval/3/L0", "completion": "    balance = 0"}
+{"task_id": "SingleLineInfilling/HumanEval/4/L1", "completion": "    return sum([abs(x - mean) for x in numbers]) / len(numbers)"}
+{"task_id": "SingleLineInfilling/HumanEval/5/L6", "completion": "        result.append(n)"}
+{"task_id": "SingleLineInfilling/HumanEval/6/L10", "completion": "        return max_depth"}
+{"task_id": "SingleLineInfilling/HumanEval/7/L0", "completion": "    return [s for s in strings if substring in s]"}
+{"task_id": "SingleLineInfilling/HumanEval/8/L0", "completion": "    sum_value = 0"}
+{"task_id": "SingleLineInfilling/HumanEval/9/L5", "completion": "            running_max = n"}
+{"task_id": "SingleLineInfilling/HumanEval/10/L1", "completion": "        return string"}
+{"task_id": "SingleLineInfilling/HumanEval/11/L6", "completion": "    return ''.join([xor(i, j) for i, j in zip(a, b)])"}
+{"task_id": "SingleLineInfilling/HumanEval/12/L4", "completion": "    for s in strings:"}
+{"task_id": "SingleLineInfilling/HumanEval/13/L0", "completion": "    while b:"}
+{"task_id": "SingleLineInfilling/HumanEval/14/L2", "completion": "    for i in range(len(string)):"}
+{"task_id": "SingleLineInfilling/HumanEval/15/L0", "completion": "    result = \"\"\n\nfor i in range(n + 1):\n    result += str(i) + \" \"\n\nreturn result.strip()"}
+{"task_id": "SingleLineInfilling/HumanEval/16/L0", "completion": "    return len(set(string.lower()))"}
+{"task_id": "SingleLineInfilling/HumanEval/17/L0", "completion": "    note_map = {"}
+{"task_id": "SingleLineInfilling/HumanEval/18/L2", "completion": "for i in range(len(string) - len(substring) + 1):"}
+{"task_id": "SingleLineInfilling/HumanEval/19/L2", "completion": "        'one': 1,"}
+{"task_id": "SingleLineInfilling/HumanEval/20/L9", "completion": "                else:"}
+{"task_id": "SingleLineInfilling/HumanEval/21/L2", "completion": "    result = []"}
+{"task_id": "SingleLineInfilling/HumanEval/22/L0", "completion": "    result = []\n\nfor v in values:\n    if isinstance(v, int):\n        result.append(v)\n\nreturn result"}
+{"task_id": "SingleLineInfilling/HumanEval/23/L0", "completion": "    return len(string)"}
+{"task_id": "SingleLineInfilling/HumanEval/24/L1", "completion": "        if n % i == 0:"}
+{"task_id": "SingleLineInfilling/HumanEval/25/L0", "completion": "    import math"}
+{"task_id": "SingleLineInfilling/HumanEval/26/L0", "completion": ""}
+{"task_id": "SingleLineInfilling/HumanEval/27/L0", "completion": "    return string.swapcase()"}
+{"task_id": "SingleLineInfilling/HumanEval/28/L0", "completion": "    return ''.join(strings)"}
+{"task_id": "SingleLineInfilling/HumanEval/29/L0", "completion": "    return [s for s in strings if s.startswith(prefix)]"}
+{"task_id": "SingleLineInfilling/HumanEval/30/L0", "completion": "    return [x for x in l if x > 0]"}
+{"task_id": "SingleLineInfilling/HumanEval/31/L1", "completion": "        return False"}
+{"task_id": "SingleLineInfilling/HumanEval/32/L5", "completion": "        center = (begin + end) / 2.0"}
+{"task_id": "SingleLineInfilling/HumanEval/33/L1", "completion": "    l[::3] = sorted(l[::3])"}
+{"task_id": "SingleLineInfilling/HumanEval/34/L0", "completion": "    return sorted(list(set(l)))"}
+{"task_id": "SingleLineInfilling/HumanEval/35/L1", "completion": "    for e in l:"}
+{"task_id": "SingleLineInfilling/HumanEval/36/L7", "completion": "        if c == '7':\nans += 1"}
+{"task_id": "SingleLineInfilling/HumanEval/37/L1", "completion": "    odds = l[1::2]"}
+{"task_id": "SingleLineInfilling/HumanEval/38/L0", "completion": "    # split string to groups. Each of length 3.\ngroups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n# cycle elements in each group. Unless group has fewer elements than 3.\ngroups = [(group[-1] + group[:-1]) if len(group) == 3 else group for group in groups]\nreturn \"\".join(groups)"}
+{"task_id": "SingleLineInfilling/HumanEval/39/L2", "completion": "    def is_prime(p):"}
+{"task_id": "SingleLineInfilling/HumanEval/40/L5", "completion": "    return False"}
+{"task_id": "SingleLineInfilling/HumanEval/41/L0", "completion": "    return n * (n - 1) // 2"}
+{"task_id": "SingleLineInfilling/HumanEval/42/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/43/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/44/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/45/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/46/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/47/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/48/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/49/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/50/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/51/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/52/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/53/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/54/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/55/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/56/L7", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/57/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/58/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/59/L9", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/60/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/61/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/62/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/63/L6", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/64/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/65/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/66/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/67/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/68/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/69/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/70/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/71/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/72/L9", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/73/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/74/L9", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/75/L9", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/76/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/77/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/78/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/79/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/80/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/81/L12", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/82/L6", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/83/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/84/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/85/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/86/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/87/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/88/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/89/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/90/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/91/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/92/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/93/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/94/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/95/L7", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/96/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/97/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/98/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/99/L12", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/100/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/101/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/102/L6", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/103/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/104/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/105/L9", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/106/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/107/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/108/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/109/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/110/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/111/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/112/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/113/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/114/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/115/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/116/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/117/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/118/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/119/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/120/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/121/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/122/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/123/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/124/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/125/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/126/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/127/L12", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/128/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/129/L24", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/130/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/131/L5", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/132/L7", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/133/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/134/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/135/L5", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/136/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/137/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/138/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/139/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/140/L9", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/141/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/142/L2", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/143/L5", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/144/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/145/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/146/L9", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/147/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/148/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/149/L5", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/150/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/151/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/152/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/153/L4", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/154/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/155/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/156/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/157/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/158/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/159/L3", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/160/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/161/L1", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/162/L0", "completion": "jackie"}
+{"task_id": "SingleLineInfilling/HumanEval/163/L3", "completion": "jackie"}
