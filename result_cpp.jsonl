@@ -1,0 +1,142 @@
+{"task_id": "HumanEval_0_has_close_elements", "completion": "            if(i != j) {"}
+{"task_id": "HumanEval_1_separate_paren_groups", "completion": ""}
+{"task_id": "HumanEval_2_truncate_number", "completion": "    return decimal_part;"}
+{"task_id": "HumanEval_3_below_zero", "completion": "		sum += operations[i];"}
+{"task_id": "HumanEval_5_intersperse", "completion": "    }"}
+{"task_id": "HumanEval_6_parse_nested_parens", "completion": "    level = final;"}
+{"task_id": "HumanEval_7_filter_by_substring", "completion": "            new_vector.push_back(current_string);"}
+{"task_id": "HumanEval_8_sum_product", "completion": "        sum += num;"}
+{"task_id": "HumanEval_9_rolling_max", "completion": "            result[i] = numbers[st.top()];"}
+{"task_id": "HumanEval_10_make_palindrome", "completion": "    std::reverse(suffix.begin(), suffix.end());"}
+{"task_id": "HumanEval_11_string_xor", "completion": "    {"}
+{"task_id": "HumanEval_12_longest", "completion": "    });"}
+{"task_id": "HumanEval_13_greatest_common_divisor", "completion": "        else"}
+{"task_id": "HumanEval_14_all_prefixes", "completion": "    return ret;"}
+{"task_id": "HumanEval_15_string_sequence", "completion": "  for(int i=0;i<=n;i++)"}
+{"task_id": "HumanEval_16_count_distinct_characters", "completion": "	}"}
+{"task_id": "HumanEval_17_parse_music", "completion": ""}
+{"task_id": "HumanEval_18_how_many_times", "completion": "    while(pos != std::string::npos) {"}
+{"task_id": "HumanEval_19_sort_numbers", "completion": "    }"}
+{"task_id": "HumanEval_21_rescale_to_unit", "completion": "    temp = (numbers[i]-min)/(max-min);"}
+{"task_id": "HumanEval_22_filter_integers", "completion": "    return ret;"}
+{"task_id": "HumanEval_23_strlen", "completion": "jackie"}
+{"task_id": "HumanEval_24_largest_divisor", "completion": "            return i;"}
+{"task_id": "HumanEval_25_factorize", "completion": "    return factorization;"}
+{"task_id": "HumanEval_26_remove_duplicates", "completion": "        if (occurences.find(*it) == occurences.end()) {\n    occurences[*it] = 1;\n} else {\n    occurences[*it] += 1;\n}"}
+{"task_id": "HumanEval_27_flip_case", "completion": "			string[i] = string[i] + 32;"}
+{"task_id": "HumanEval_28_concatenate", "completion": "    result += s;"}
+{"task_id": "HumanEval_29_filter_by_prefix", "completion": "    });"}
+{"task_id": "HumanEval_30_get_positive", "completion": "jackie"}
+{"task_id": "HumanEval_31_is_prime", "completion": "            return false;"}
+{"task_id": "HumanEval_33_sort_third", "completion": "	std::sort(a.begin(), a.end());"}
+{"task_id": "HumanEval_34_unique", "completion": "        if (result.size() == 0) {"}
+{"task_id": "HumanEval_35_max_element", "completion": "jackie"}
+{"task_id": "HumanEval_36_fizz_buzz", "completion": ""}
+{"task_id": "HumanEval_37_sort_even", "completion": "                l[j+2] = temp;"}
+{"task_id": "HumanEval_39_prime_fib", "completion": "   if (n == 5) return 89;"}
+{"task_id": "HumanEval_40_triples_sum_to_zero", "completion": ""}
+{"task_id": "HumanEval_42_incr_list", "completion": "    return res;"}
+{"task_id": "HumanEval_43_pairs_sum_to_zero", "completion": "        if (l[i] > 0) {"}
+{"task_id": "HumanEval_44_change_base", "completion": "	return s;"}
+{"task_id": "HumanEval_45_triangle_area", "completion": ""}
+{"task_id": "HumanEval_46_fib4", "completion": "    c[3] = v[0] + v[1] + v[2] + v[3];"}
+{"task_id": "HumanEval_47_median", "completion": "        return l[index];"}
+{"task_id": "HumanEval_48_is_palindrome", "completion": "	}"}
+{"task_id": "HumanEval_49_modp", "completion": ""}
+{"task_id": "HumanEval_51_remove_vowels", "completion": ""}
+{"task_id": "HumanEval_52_below_threshold", "completion": "jackie"}
+{"task_id": "HumanEval_53_add", "completion": "    return add(x ^ y, (x & y) << 1);"}
+{"task_id": "HumanEval_54_same_chars", "completion": "  }"}
+{"task_id": "HumanEval_55_fib", "completion": "		fib[i] = fib[i - 1] + fib[i - 2];"}
+{"task_id": "HumanEval_56_correct_bracketing", "completion": "        } else if (brackets[i] == '>') {"}
+{"task_id": "HumanEval_57_monotonic", "completion": ""}
+{"task_id": "HumanEval_58_common", "completion": "   std::set_intersection(l1.begin(), l1.end(), l2.begin(), l2.end(),"}
+{"task_id": "HumanEval_59_largest_prime_factor", "completion": "        while(copy_n % i == 0){"}
+{"task_id": "HumanEval_60_sum_to_n", "completion": "jackie"}
+{"task_id": "HumanEval_61_correct_bracketing", "completion": "	else return false;"}
+{"task_id": "HumanEval_62_derivative", "completion": "  }"}
+{"task_id": "HumanEval_63_fibfib", "completion": "            a[i] = a[i-1] + a[i-2] + a[i-3];"}
+{"task_id": "HumanEval_64_vowels_count", "completion": "            }"}
+{"task_id": "HumanEval_65_circular_shift", "completion": "        std::reverse(x_str.begin(), x_str.end());"}
+{"task_id": "HumanEval_66_digitSum", "completion": "  for(char c : s){"}
+{"task_id": "HumanEval_67_fruit_distribution", "completion": "	return n - A - O;"}
+{"task_id": "HumanEval_68_pluck", "completion": "				min = arr[i];"}
+{"task_id": "HumanEval_69_search", "completion": "    return max_freq;"}
+{"task_id": "HumanEval_70_strange_sort_list", "completion": "                j--;"}
+{"task_id": "HumanEval_72_will_it_fly", "completion": "    if (sum <= w) {"}
+{"task_id": "HumanEval_73_smallest_change", "completion": "      count++;"}
+{"task_id": "HumanEval_74_total_match", "completion": "    count2 += lst2[i].size();"}
+{"task_id": "HumanEval_75_is_multiply_prime", "completion": ""}
+{"task_id": "HumanEval_77_iscube", "completion": "    return x * x * x == a;"}
+{"task_id": "HumanEval_78_hex_key", "completion": "  }"}
+{"task_id": "HumanEval_79_decimal_to_binary", "completion": "  std::reverse(binary.begin() + 2, binary.end());"}
+{"task_id": "HumanEval_81_numerical_letter_grade", "completion": "        } else if (grade > (float)0.0) {"}
+{"task_id": "HumanEval_82_prime_length", "completion": "        return true;"}
+{"task_id": "HumanEval_85_add", "completion": "	return result;"}
+{"task_id": "HumanEval_86_anti_shuffle", "completion": "        std::sort(words[i].begin(), words[i].end());"}
+{"task_id": "HumanEval_87_get_row", "completion": "            j++;"}
+{"task_id": "HumanEval_88_sort_array", "completion": "    }"}
+{"task_id": "HumanEval_89_encrypt", "completion": "            int temp = (s[i] - 'A' + 2 * 2) % 26;"}
+{"task_id": "HumanEval_90_next_smallest", "completion": "	}"}
+{"task_id": "HumanEval_91_is_bored", "completion": "      words.push_back(word);"}
+{"task_id": "HumanEval_93_encode", "completion": "		} else if (c >= 'A' && c <= 'Z') {"}
+{"task_id": "HumanEval_94_skjkasdkd", "completion": "            {"}
+{"task_id": "HumanEval_95_check_dict_case", "completion": "  else"}
+{"task_id": "HumanEval_96_count_up_to", "completion": "					isPrime = false;"}
+{"task_id": "HumanEval_97_multiply", "completion": "    return c * d;"}
+{"task_id": "HumanEval_98_count_upper", "completion": "	}"}
+{"task_id": "HumanEval_99_closest_integer", "completion": "    double num = std::stod(value);"}
+{"task_id": "HumanEval_100_make_a_pile", "completion": "        if(n%2==0)\n{\n    v.push_back(n);\n    n+=2;\n}\nelse\n{\n    v.push_back(n);\n    n+=2;\n}"}
+{"task_id": "HumanEval_101_words_string", "completion": "  for (auto x : s) {"}
+{"task_id": "HumanEval_102_choose_num", "completion": "            return i;"}
+{"task_id": "HumanEval_104_unique_digits", "completion": "        } else {"}
+{"task_id": "HumanEval_105_by_length", "completion": "            res.push_back(names[num]);"}
+{"task_id": "HumanEval_106_f", "completion": "        else{"}
+{"task_id": "HumanEval_107_even_odd_palindrome", "completion": "    return std::make_tuple(even, odd);"}
+{"task_id": "HumanEval_108_count_nums", "completion": "        if(sum>0)"}
+{"task_id": "HumanEval_109_move_one_ball", "completion": "    int count = 0;"}
+{"task_id": "HumanEval_110_exchange", "completion": "    if (lst_even.size() >= lst1.size())"}
+{"task_id": "HumanEval_111_histogram", "completion": "    return result;"}
+{"task_id": "HumanEval_112_reverse_delete", "completion": ""}
+{"task_id": "HumanEval_113_odd_count", "completion": "        for (char i : n) {"}
+{"task_id": "HumanEval_114_minSubArraySum", "completion": "    return m;"}
+{"task_id": "HumanEval_115_max_fill", "completion": "    }"}
+{"task_id": "HumanEval_116_sort_array", "completion": "        ones++;"}
+{"task_id": "HumanEval_117_select_words", "completion": "        } else {"}
+{"task_id": "HumanEval_118_get_closest_vowel", "completion": "  return vowels_found;"}
+{"task_id": "HumanEval_120_maximum", "completion": ""}
+{"task_id": "HumanEval_121_solution", "completion": "    return ans;"}
+{"task_id": "HumanEval_122_add_elements", "completion": "    }"}
+{"task_id": "HumanEval_123_get_odd_collatz", "completion": ""}
+{"task_id": "HumanEval_124_valid_date", "completion": "    if(month<1 || month>12)"}
+{"task_id": "HumanEval_125_split_words", "completion": "    } else {"}
+{"task_id": "HumanEval_126_is_sorted", "completion": "                    return false;"}
+{"task_id": "HumanEval_127_intersection", "completion": "  if (lengthOfIntersection <= 0) {"}
+{"task_id": "HumanEval_128_prod_signs", "completion": "	{"}
+{"task_id": "HumanEval_131_digits", "completion": "        if (temp % 2 == 1) {"}
+{"task_id": "HumanEval_133_sum_squares", "completion": "    long tmp = std::ceil(lst[i]);"}
+{"task_id": "HumanEval_134_check_if_last_char_is_a_letter", "completion": "jackie"}
+{"task_id": "HumanEval_135_can_arrange", "completion": "  }"}
+{"task_id": "HumanEval_136_largest_smallest_integers", "completion": "        }else if(val < 0){"}
+{"task_id": "HumanEval_138_is_equal_to_sum_even", "completion": "jackie"}
+{"task_id": "HumanEval_139_special_factorial", "completion": "  }"}
+{"task_id": "HumanEval_140_fix_spaces", "completion": "          spaces = 0;"}
+{"task_id": "HumanEval_141_file_name_check", "completion": "        if (isdigit(file_name_without_extension[i])) {"}
+{"task_id": "HumanEval_142_sum_squares", "completion": "        else if (i % 4 == 0) {"}
+{"task_id": "HumanEval_143_words_in_sentence", "completion": "        res += v[i];"}
+{"task_id": "HumanEval_144_simplify", "completion": "            den /= i;"}
+{"task_id": "HumanEval_146_specialFilter", "completion": "    return count;"}
+{"task_id": "HumanEval_147_get_max_triples", "completion": ""}
+{"task_id": "HumanEval_148_bf", "completion": "  int planet2Idx = std::find(solarsystem.begin(), solarsystem.end(), planet2) - solarsystem.begin();"}
+{"task_id": "HumanEval_149_sorted_list_sum", "completion": "        if (a.size() == b.size()) {"}
+{"task_id": "HumanEval_150_x_or_y", "completion": "    for(long i=2;i<=sqrt(n);i++)"}
+{"task_id": "HumanEval_151_double_the_difference", "completion": "    }"}
+{"task_id": "HumanEval_152_compare", "completion": "    if (game[i] == guess[i]) {"}
+{"task_id": "HumanEval_153_Strongest_Extension", "completion": "	return s;"}
+{"task_id": "HumanEval_154_cycpattern_check", "completion": "    }"}
+{"task_id": "HumanEval_155_even_odd_count", "completion": "    else {"}
+{"task_id": "HumanEval_156_int_to_mini_roman", "completion": "        number = number % num[i];"}
+{"task_id": "HumanEval_157_right_angle_triangle", "completion": "    long b2 = tri[1]*tri[1];"}
+{"task_id": "HumanEval_158_find_max", "completion": "            freq[c]++;"}
+{"task_id": "HumanEval_159_eat", "completion": "        a.push_back(0);"}
+{"task_id": "HumanEval_161_solve", "completion": "  if (res == s) {"}
