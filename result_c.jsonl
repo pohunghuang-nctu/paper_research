@@ -1,0 +1,300 @@
+{"task_id": "soc-integrator.c_140", "completion": "\tdev_info(dev, \"    Manufacturer: %02x\\n\", val >> 24);\n"}
+{"task_id": "ssbi.c_76", "completion": "\treturn readl(ssbi->base + reg);\n"}
+{"task_id": "rt.c_2370", "completion": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t    soft, hard);\n"}
+{"task_id": "iterators.c_42", "completion": "\tint debug_fd;\n"}
+{"task_id": "hw_atl2_llh.c_109", "completion": "\t\t\t    HW_ATL2_TPS_DATA_TCTCREDIT_MAX_MSK,\n"}
+{"task_id": "task_work.c_152", "completion": "\t\t\n"}
+{"task_id": "legacy_freezer.c_77", "completion": "\tif (state & CGROUP_FROZEN)\n"}
+{"task_id": "smpboot.c_470", "completion": "\tdo {\n"}
+{"task_id": "pvrusb2-wm8775.c_9", "completion": "   This file contains the code for the Philips/NXP/National\tSemiconductor\n"}
+{"task_id": "wm97xx-core.c_837", "completion": "\t} else {\n"}
+{"task_id": "mtk_thermal.c_564", "completion": "\ttmp = mt->vts[sensno] + 3105;\n"}
+{"task_id": "xilinx-pr-decoupler.c_31", "completion": "static inline u32 xlnx_pr_decoupler_read(struct xlnx_pr_decoupler_data *d,\n"}
+{"task_id": "ohci.c_1230", "completion": "\td_branch = find_branch_descriptor(d, z);\n"}
+{"task_id": "f_tcm.c_313", "completion": "\tif (!fu->bot_req_out)\n"}
+{"task_id": "pwm-mxs.c_130", "completion": "\tmxs->base = devm_platform_ioremap_resource(pdev, 0);\n"}
+{"task_id": "version.c_52", "completion": "\t\" (\" LINUX_COMPILER \") %s\\n\";\n"}
+{"task_id": "fmvj18x_cs.c_357", "completion": "\t\tlink->config_base = 0x800;\n"}
+{"task_id": "uvc_metadata.c_47", "completion": "\tif (format->type != vfh->vdev->queue->type)\n"}
+{"task_id": "board.c_42", "completion": "static bool board_staging_dt_node_available(const struct resource *resource,\n"}
+{"task_id": "user-return-notifier.c_25", "completion": "void user_return_notifier_unregister(struct user_return_notifier *urn)\n"}
+{"task_id": "capability.c_275", "completion": "\tcommit_creds(new);\n"}
+{"task_id": "vsyscall.c_87", "completion": "\tvdso_ts->sec\t= tk->xtime_sec;\n"}
+{"task_id": "posix-cpu-timers.c_723", "completion": "/*\n * Guts of sys_timer_gettime for CPU timers.\n * This is called with the timer locked and interrupts disabled.\n */\n"}
+{"task_id": "budget-ci.c_92", "completion": "\tstruct budget budget;\n"}
+{"task_id": "gpio-rda.c_165", "completion": "\tret = rda_gpio_set_irq(chip, offset, flow_type);\n"}
+{"task_id": "timings.c_662", "completion": "static u64 intervals2[] __initdata = {\n"}
+{"task_id": "vcc.c_766", "completion": "\tif (unlikely(!tty->port)) {\n"}
+{"task_id": "tps65911-comparator.c_57", "completion": "\tint index = 0;\n"}
+{"task_id": "matrix.c_211", "completion": "\tunsigned int cpu, failed_cpu;\n"}
+{"task_id": "bd9571mwv-regulator.c_56", "completion": "\tif (ret != 0)\n"}
+{"task_id": "fb_ssd1351.c_57", "completion": "\treturn 0;\n"}
+{"task_id": "debug.c_235", "completion": "static void cgroup_masks_read_one(struct seq_file *seq, const char *name,\n"}
+{"task_id": "qspinlock.c_223", "completion": "\twhile (1) {\n"}
+{"task_id": "gpio-charger.c_256", "completion": "\tstruct power_supply_desc *charger_desc;\n"}
+{"task_id": "clk-sh73a0.c_209", "completion": "\t\t\tclks[i] = clk;\n"}
+{"task_id": "audit_tree.c_98", "completion": "\t\trefcount_set(&tree->count, 1);\n"}
+{"task_id": "callchain.c_151", "completion": "static int get_recursion_context(int *recursion)\n{\n\tint rctx;\n\n\trctx = *recursion;\n\tif (rctx >= PERF_NR_CONTEXTS)\n\t\treturn -1;\n\n\t*recursion = rctx + 1;\n\n\treturn rctx;\n}\n"}
+{"task_id": "leds-cr0014114.c_68", "completion": "\t\t\n"}
+{"task_id": "pch_uart.c_226", "completion": "\tstruct pch_dma_slave\t\tparam_tx;\n"}
+{"task_id": "rtc-ds1685.c_1107", "completion": "\t\trtc->data = devm_platform_ioremap_resource(pdev, 1);\n"}
+{"task_id": "igc_phy.c_483", "completion": "\tif (phy->autoneg_wait_to_complete) {\n"}
+{"task_id": "context_tracking.c_124", "completion": "NOKPROBE_SYMBOL(context_tracking_enter);\n"}
+{"task_id": "auditsc.c_322", "completion": "\t\t\tif (audit_tree_match(p->c[n], tree))\n"}
+{"task_id": "stm32-pwr.c_124", "completion": "\tPWR_REG(PWR_REG11, \"reg11\", 1100000, REG_1_1_EN, \"vdd\"),\n"}
+{"task_id": "kdb_keyboard.c_154", "completion": "\telse if (scancode == 0x7d)\n"}
+{"task_id": "fc.c_1765", "completion": "\t\t\t\t\tbe16_to_cpu(rqst->connect_cmd.qid),\n"}
+{"task_id": "nv04.c_34", "completion": "\treturn nvkm_i2c_new_(&nv04_i2c, device, index, pi2c);\n"}
+{"task_id": "via686a.c_209", "completion": "\t21, 25, 29, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 77,\n"}
+{"task_id": "venc.c_900", "completion": "static int venc_runtime_resume(struct device *dev)\n"}
+{"task_id": "da9062-core.c_332", "completion": "\t\treturn -EIO;\n"}
+{"task_id": "kdb_bp.c_96", "completion": "\tif (!bp->bp_type)\n"}
+{"task_id": "core.c_738", "completion": "EXPORT_SYMBOL(kcsan_set_access_mask);\n"}
+{"task_id": "ibmphp_pci.c_43", "completion": "\t\t\t\t\tbreak;\n"}
+{"task_id": "chtls_hw.c_235", "completion": "\t\tck_size          = CHCR_KEYCTX_CIPHER_KEY_SIZE_128;\n"}
+{"task_id": "sclp_vt220.c_321", "completion": "\t\treturn 0;\n"}
+{"task_id": "static_call.c_156", "completion": "\t\t\tcontinue;\n"}
+{"task_id": "tables.c_87", "completion": "\t0x0D22, 0x0D82, 0x0DE2, 0x0E42,\n"}
+{"task_id": "i2s_pll_clock.c_160", "completion": "\t.recalc_rate = i2s_pll_recalc_rate,\n"}
+{"task_id": "smapi.c_280", "completion": "\t\t\t\tif ((usSI & 0xFF) == mwave_uart_irq) {\n"}
+{"task_id": "completion.c_292", "completion": "\tif (!READ_ONCE(x->done))\n"}
+{"task_id": "device.c_325", "completion": "\tif (!wg->handshake_receive_wq)\n"}
+{"task_id": "trace_export.c_178", "completion": "__attribute__((__section__(\".ftrace_events\"))) *event_##call##_ptr = &event_##call;\n"}
+{"task_id": "i2c-dln2.c_161", "completion": "\t\t\tif (ret < 0)\n"}
+{"task_id": "extcon.c_1020", "completion": "static void extcon_dev_release(struct device *dev)\n{\n\tstruct extcon_dev *edev = dev_get_drvdata(dev);\n\n\tkfree(edev->cables);\n\tkfree(edev);\n}\n"}
+{"task_id": "acpi_amba.c_78", "completion": "\t\t\t\taddress_found = true;\n"}
+{"task_id": "opa_vnic_vema_iface.c_290", "completion": "\t\t\t\t\t\t       ARRAY_SIZE(dst->pcp_to_sc_uc));\n"}
+{"task_id": "ipi.c_185", "completion": "/**\n"}
+{"task_id": "idle.c_310", "completion": "\tpreempt_fold_need_resched();\n"}
+{"task_id": "trampoline.c_235", "completion": "\n"}
+{"task_id": "rndis_filter.c_1093", "completion": "\trndis_filter_send_request(dev, request);\n"}
+{"task_id": "rstat.c_10", "completion": "/**\n * cgroup_rstat_cpu - return the per-cpu rstat_cpu for @cgrp on @cpu\n * @cgrp: target cgroup\n * @cpu: target cpu\n *\n * Returns the per-cpu rstat_cpu for @cgrp on @cpu.  Must be called with\n * the matching cgroup_rstat_cpu_lock held.\n */\n"}
+{"task_id": "atombios_encoders.c_198", "completion": "\tif (rdev->pdev->device == 0x9581 ||\n"}
+{"task_id": "cedrus.c_488", "completion": "\t.capabilities\t= CEDRUS_CAPABILITY_UNTILED,\n\t.mod_rate\t= 320000000,\n"}
+{"task_id": "fsl_dcu_drm_kms.c_33", "completion": "\tret = drm_vblank_init(fsl_dev->drm, fsl_dev->num_crtc);\n"}
+{"task_id": "timecounter.c_42", "completion": "\tns_offset = cyclecounter_cyc2ns(tc->cc, cycle_delta,\n"}
+{"task_id": "ad525x_dpot-i2c.c_49", "completion": "\t.write_r8d16\t= write_r8d16,\n"}
+{"task_id": "isys_dma_rmgr.c_43", "completion": "\tisys2401_dma_channel\tmax_dma_channel;\n"}
+{"task_id": "sx9310.c_956", "completion": "\t\t\treturn -ENOMEM;\n"}
+{"task_id": "base.c_30", "completion": "\tstruct nvkm_gsp *gsp = nvkm_gsp(subdev);\n"}
+{"task_id": "display_gx1.c_38", "completion": "\tspin_unlock_irqrestore(&gx1_conf_reg_lock, flags);\n"}
+{"task_id": "groups.c_154", "completion": "\tconst struct cred *cred = current_cred();\n"}
+{"task_id": "drm_atomic_uapi.c_646", "completion": "\t\treturn plane->funcs->atomic_get_property(plane, state,\n\t\t\t\tproperty, val);\n\t} else {\n\t\treturn -EINVAL;\n"}
+{"task_id": "qrwlock.c_53", "completion": "\tatomic_add(_QR_WAKEUP, &lock->cnts);\n"}
+{"task_id": "trace_events_synth.c_685", "completion": "\t\t\tret = -EINVAL;\n"}
+{"task_id": "calibrate.c_40", "completion": "\tunsigned long good_timer_sum = 0;\n"}
+{"task_id": "rc-kworld-pc150u.c_93", "completion": "module_init(init_rc_map_kworld_pc150u)\n"}
+{"task_id": "chip.c_4787", "completion": "\t\t.g2_irqs = 14,\n"}
+{"task_id": "card_sysfs.c_249", "completion": "\tNULL,\n"}
+{"task_id": "i2c-omap.c_897", "completion": "\t\n"}
+{"task_id": "i2c-amd-mp2-pci.c_153", "completion": "\t\t\t\tmemcpy_fromio(i2c_common->msg->buf,\n"}
+{"task_id": "tape_char.c_179", "completion": "\t\n"}
+{"task_id": "gpio-aggregator.c_217", "completion": "\treturn count;\n"}
+{"task_id": "atomisp_tpg.c_147", "completion": "\t\n"}
+{"task_id": "gpio-adp5588.c_317", "completion": "\t\n"}
+{"task_id": "tracing_map.c_416", "completion": "\telt->fields = kcalloc(map->n_fields, sizeof(*elt->fields), GFP_KERNEL);\n"}
+{"task_id": "proc.c_45", "completion": "static int show_irq_affinity(int type, struct seq_file *m)\n"}
+{"task_id": "vboxguest_utils.c_736", "completion": "\t[-VERR_INSUFFICIENT_RESOURCES]                   = -ENOMEM,\n\t[-VERR_OUT_OF_RESOURCES]                         = -ENOMEM,\n\t[-VERR_INVALID_HANDLE]                           = -EBADF,\n\t[-VERR_INVALID_PARAMETER]                        = -EINVAL,\n\t[-VERR_NOT_IMPLEMENTED]\t\t\t\t\t\t  = -ENOSYS,\n\t[-VERR_NOT_SUPPORTED]\n"}
+{"task_id": "power-traces.c_17", "completion": "EXPORT_TRACEPOINT_SYMBOL_GPL(cpu_idle);\n"}
+{"task_id": "saa7134-ts.c_63", "completion": "\treturn 0;\n"}
+{"task_id": "extcon-max77693.c_1032", "completion": "\t\t\t\t\t&attached);\n"}
+{"task_id": "spi-dw-core.c_111", "completion": "static inline u32 tx_max(struct dw_spi *dws)\n"}
+{"task_id": "iommu_v2.c_113", "completion": "\tdev_state = __get_device_state(devid);\n"}
+{"task_id": "z2_battery.c_247", "completion": "\tif (info->charge_gpio >= 0 && gpio_is_valid(info->charge_gpio))\n"}
+{"task_id": "handle.c_151", "completion": "\t\t    (action->flags & IRQF_ONESHOT))\n"}
+{"task_id": "adp5520.c_47", "completion": "\tif (ret < 0) {\n"}
+{"task_id": "ptrace.c_743", "completion": "\t\tif (!found)\n"}
+{"task_id": "tick-common.c_95", "completion": "\t\t\n"}
+{"task_id": "dpaa2-eth-devlink.c_27", "completion": "\tDPAA2_ETH_TRAP_DROP(DCCP_PARSING, PARSER_ERROR_DROPS),\n"}
+{"task_id": "do_mounts_initrd.c_90", "completion": "\t\tpanic(\"Failed to allocate linuxrc subprocess\\n\");\n"}
+{"task_id": "usblcd.c_113", "completion": "\tdev = file->private_data;\n"}
+{"task_id": "tmp108.c_442", "completion": "MODULE_LICENSE(\"GPL\");\n"}
+{"task_id": "via_aux_vt1622.c_24", "completion": "\t\treturn;\n"}
+{"task_id": "synaptics_usb.c_250", "completion": "\t\t\t__func__, retval);\n"}
+{"task_id": "rk808.c_68", "completion": "\tcase RK817_INT_STS_REG1:\n"}
+{"task_id": "trace_events_trigger.c_739", "completion": "\t\t       struct trace_event_file *file)\n"}
+{"task_id": "f_ecm.c_229", "completion": "\tNULL,\n"}
+{"task_id": "testmode.c_107", "completion": "\t\tgoto out;\n"}
+{"task_id": "fnic_attrs.c_50", "completion": "struct device_attribute *fnic_host_attrs[] = {\n"}
+{"task_id": "jz4780_bch.c_114", "completion": "\tdest32 = (u32 *)buf;\n"}
+{"task_id": "ucount.c_155", "completion": "\t\tucounts = NULL;\n"}
+{"task_id": "fair.c_1962", "completion": "\t\t\tbreak;\n"}
+{"task_id": "module_signing.c_19", "completion": "int module_signature_verify(const struct load_info *info,\n\t\t\t    const void *mod, unsigned long len)\n"}
+{"task_id": "rtmutex-debug.c_114", "completion": "\tprintk(\"stack backtrace:\\n\");\n"}
+{"task_id": "membarrier.c_165", "completion": "\tsmp_mb();\t/* exit from system call is not a mb */\n"}
+{"task_id": "ethtool.c_1156", "completion": "\t\t\tif (!ip6_mask_is_full(uip6_mask->ip6dst))\n"}
+{"task_id": "search.c_237", "completion": "\t\t\treturn pci_dev_get(dev);\n"}
+{"task_id": "workqueue.c_5973", "completion": "\t\t\t\t\t      WQ_FREEZABLE, 0);\n"}
+{"task_id": "fgraph.c_302", "completion": "\t\treturn ret;\n"}
+{"task_id": "clockdomain.c_54", "completion": "\tif (ti_clk_get_features()->flags & TI_CLK_DISABLE_CLKDM_CONTROL) {\n"}
+{"task_id": "lnbh29.c_141", "completion": "\tpriv->i2c_address = cfg->i2c_address;\n"}
+{"task_id": "cpu_pm.c_132", "completion": "\treturn cpu_pm_notify_robust(CPU_CLUSTER_PM_ENTER, CPU_CLUSTER_PM_ENTER_FAILED);\n"}
+{"task_id": "rtw_sta_mgt.c_65", "completion": "\t\treturn _FAIL;\n"}
+{"task_id": "gpio-cadence.c_286", "completion": "\t.probe = cdns_gpio_probe,\n"}
+{"task_id": "transition.c_121", "completion": "\t/*\n"}
+{"task_id": "ltc2978.c_209", "completion": "static int ltc_read_byte(struct i2c_client *client, int page)\n{\n\tint ret;\n\n\tret = ltc_wait_ready(client);\n\tif (ret < 0)\n\t\treturn ret;\n\n\treturn pmbus_read_byte(client, page);\n}\n"}
+{"task_id": "bmc150_magn_spi.c_23", "completion": "\tif (IS_ERR(regmap)) {\n"}
+{"task_id": "tracepoint.c_263", "completion": "\told = func_add(&tp_funcs, func, prio);\n"}
+{"task_id": "sunxi-rsb.c_340", "completion": "\twritel(RSB_DAR_RTA(rtaddr), rsb->regs + RSB_DAR);\n"}
+{"task_id": "spi-sifive.c_293", "completion": "\tstruct sifive_spi *spi;\n"}
+{"task_id": "lockdep_proc.c_82", "completion": "\tseq_puts(m, \"\\n\");\n"}
+{"task_id": "cros_ec_sensorhub.c_151", "completion": "\tplatform_set_drvdata(pdev, data);\n"}
+{"task_id": "nv31.c_187", "completion": "\tstruct nvkm_device *device = subdev->device;\n"}
+{"task_id": "mac.c_364", "completion": "\tu32 imem_size;\n"}
+{"task_id": "fsi-master-hub.c_102", "completion": "\treturn fsi_device_write(hub->upstream, FSI_MCENP0 + (4 * idx), &reg, 4);\n"}
+{"task_id": "8250_fsl.c_56", "completion": "\t    (up->ier & (UART_IER_RLSI | UART_IER_RDI))) {\n"}
+{"task_id": "kdb_support.c_127", "completion": "\t\t\t\tbreak;\n"}
+{"task_id": "scftorture.c_161", "completion": "\t\tbangstr = \"!!! \";\n"}
+{"task_id": "spinlock_debug.c_25", "completion": "\tlock->raw_lock = __ARCH_SPIN_LOCK_UNLOCKED;\n"}
+{"task_id": "i2c-parport.c_130", "completion": "\t\t \"Parallel port number(s) to use.\\n\"\n"}
+{"task_id": "hwio.c_156", "completion": "\t\t\tbuf_id_tx = (buf_id_tx + 1) & 3;\n"}
+{"task_id": "dfl-afu-main.c_479", "completion": "\tif (dfl_feature_is_private(dev, PORT_FEATURE_ID_AFU))\n"}
+{"task_id": "dcn30_vpg.c_110", "completion": "\t\tREG_UPDATE(VPG_GSP_FRAME_UPDATE_CTRL,\n"}
+{"task_id": "iomem.c_121", "completion": "/**\n * memunmap() - unmap a memory region\n * @addr: address returned by memremap()\n *\n * memunmap() is \"iounmap\" for cases where the resource being unmapped\n * was mapped with memremap().\n */\n"}
+{"task_id": "ide-floppy.c_187", "completion": "\t\n"}
+{"task_id": "bus_spi.c_179", "completion": "static int wfx_spi_probe(struct spi_device *func)\n"}
+{"task_id": "i2c-pxa-pci.c_75", "completion": "\t\tret = -ENOMEM;\n"}
+{"task_id": "khadas_mcu_fan.c_34", "completion": "\tctx->level = level;\n"}
+{"task_id": "lpfc_bsg.c_478", "completion": "\t\n"}
+{"task_id": "ide-xfer-mode.c_117", "completion": "\t\treturn 0;\n"}
+{"task_id": "refcount.c_75", "completion": "\t\t\t\t    \"%s(): Ref count size is zero\\n\", __func__);\n"}
+{"task_id": "pcf50633-backlight.c_48", "completion": "static int pcf50633_bl_update_status(struct backlight_device *bl)\n"}
+{"task_id": "rdma.c_216", "completion": "\tmutex_unlock(&rdmacg_mutex);\n"}
+{"task_id": "cik_sdma.c_1315", "completion": "\tib->ptr[ib->length_dw++] = SDMA_PACKET(SDMA_OPCODE_COPY, 0, 0);\n"}
+{"task_id": "atyfb_base.c_1876", "completion": "\t\t\t\t\t   sizeof(clk)))\n"}
+{"task_id": "iforce-usb.c_34", "completion": "\t\treturn;\n"}
+{"task_id": "atafb.c_1553", "completion": "\thw->vbb = videl.vbb;\n"}
+{"task_id": "nfp_net_sriov.c_64", "completion": "\tunsigned int vf_offset;\n"}
+{"task_id": "pinctrl-sun50i-h6.c_103", "completion": "\t\t  SUNXI_FUNCTION(0x2, \"pwm2\"),\n"}
+{"task_id": "hw_breakpoint.c_280", "completion": "\tint weight;\n"}
+{"task_id": "report.c_261", "completion": "\t\n"}
+{"task_id": "esd_usb2.c_257", "completion": "\t\t\t\n"}
+{"task_id": "trace_syscalls.c_306", "completion": "\tsyscall_nr = trace_get_syscall_nr(current, regs);\n"}
+{"task_id": "clk-mmp2.c_291", "completion": "\t\t\t\tapbc_base + APBC_SSP0, 4, 3, 0, &clk_lock);\n"}
+{"task_id": "timekeeping_debug.c_25", "completion": "\t\n"}
+{"task_id": "vivid-kthread-cap.c_259", "completion": "\tunsigned vid_overlay_fract_part = 0;\n"}
+{"task_id": "pmagb-b-fb.c_273", "completion": "\tinfo->fix = pmagbbfb_fix;\n"}
+{"task_id": "usb.c_323", "completion": "\tieee80211_free_hw(dev->hw);\n"}
+{"task_id": "i2c-boardinfo.c_64", "completion": "\t\tdevinfo = kzalloc(sizeof(*devinfo), GFP_KERNEL);\n"}
+{"task_id": "kcov.c_357", "completion": "\tkcov_task_reset(t);\n"}
+{"task_id": "selftest.c_50", "completion": "\t\t\t\treturn false;\n"}
+{"task_id": "suspend.c_511", "completion": "\ttrace_suspend_resume(TPS(\"resume_console\"), state, false);\n"}
+{"task_id": "ccp-crypto-rsa.c_121", "completion": "\tctx->u.rsa.d_buf = NULL;\n"}
+{"task_id": "leds-ktd2692.c_136", "completion": "\t\tudelay(KTD2692_TIME_LONG_BITSET_US);\n"}
+{"task_id": "cal-camerarx.c_439", "completion": "\t\tCAL_CSI2_COMPLEXIO_IRQ_ECC_CORRECTION_MASK |\n"}
+{"task_id": "pinctrl-xway.c_997", "completion": "static const unsigned xrx200_pins_pci_req4[] = {GPIO37};\n"}
+{"task_id": "ctxgf108.c_271", "completion": "gf108_grctx_pack_icmd_0[] = {\n\t{ gf108_grctx_init_icmd_0 },\n\t{}\n"}
+{"task_id": "windfarm_pm91.c_225", "completion": "\t\treturn;\n"}
+{"task_id": "max77843.c_72", "completion": "\tmax77843->i2c_chg = i2c_new_dummy_device(max77843->i2c->adapter,\n\t\t\tMAX77843_CHG_I2C_ADDR);\n"}
+{"task_id": "da9052_onkey.c_67", "completion": "\treturn IRQ_HANDLED;\n"}
+{"task_id": "vmid.c_96", "completion": "\tstruct core_vmid *core_vmid = MOD_VMID_TO_CORE(mod_vmid);\n"}
+{"task_id": "a100u2w.c_425", "completion": "\t\t\tif (le32_to_cpu(data32) != inl(host->base + ORC_RISCRAM)) {\n"}
+{"task_id": "kallsyms.c_153", "completion": "\t\treturn kallsyms_addresses[idx] + kallsyms_relative_base;\n"}
+{"task_id": "calib.c_382", "completion": "\t\tif ((i >= AR5416_MAX_CHAINS) && !IS_CHAN_HT40(ah->curchan))\n"}
+{"task_id": "loop.c_800", "completion": "\telse {\n"}
+{"task_id": "hamachi.c_1514", "completion": "\t\t\t\t\t\t DMA_FROM_DEVICE);\n"}
+{"task_id": "spurious.c_399", "completion": "\tif (try_misrouted_irq(irq, desc, action_ret)) {\n"}
+{"task_id": "img-ir-rc6.c_110", "completion": "\t.scancode\t= img_ir_rc6_scancode,\n"}
+{"task_id": "itimer.c_243", "completion": "\t\tset_cpu_itimer(tsk, CPUCLOCK_PROF, value, ovalue);\n"}
+{"task_id": "adf_vf_isr.c_96", "completion": "\t\tif (!stop_data) {\n"}
+{"task_id": "hibmc_ttm.c_30", "completion": "\t\n"}
+{"task_id": "psobject.c_451", "completion": "\tif (ACPI_FAILURE(status2)) {\n"}
+{"task_id": "thunder_xcv.c_193", "completion": "\t\n"}
+{"task_id": "mac.c_1592", "completion": "\t\t\t\t   E1000_LEDCTL_MODE_MASK;\n"}
+{"task_id": "irq_work.c_168", "completion": "\tllist_for_each_entry_safe(work, tmp, llnode, llnode) {\n"}
+{"task_id": "rockchip.c_156", "completion": "\tint err;\n"}
+{"task_id": "sysctl.c_1658", "completion": "\t\t.mode\t\t= 0644,\n"}
+{"task_id": "radeon_dp_auxch.c_123", "completion": "\tbyte = (msg->address >> 8) & 0xff;\n"}
+{"task_id": "pid.c_159", "completion": "\t\t      int set_tid_size)\n"}
+{"task_id": "global2_scratch.c_274", "completion": "\tno_cpu = !!(val & MV88E6352_G2_SCRATCH_CONFIG_DATA1_NO_CPU);\n"}
+{"task_id": "timeconv.c_107", "completion": "\twhile (days < 0 || days >= (isleap(y) ? 366 : 365)) {\n"}
+{"task_id": "swait.c_114", "completion": "\t\n"}
+{"task_id": "intel_cht_int33fe_microb.c_48", "completion": "\treturn PTR_ERR_OR_ZERO(data->battery_fg);\n"}
+{"task_id": "i2c-emev2.c_202", "completion": "out_reset:\n"}
+{"task_id": "sata_gemini.c_133", "completion": "\tif ((sg->muxmode == GEMINI_MUXMODE_2) &&\n"}
+{"task_id": "idmouse.c_245", "completion": "\t\tresult = idmouse_create_image(dev);\n"}
+{"task_id": "ring_buffer.c_4065", "completion": "\t\n"}
+{"task_id": "affinity.c_313", "completion": "\t\t\t\t++cpus_per_vec;\n"}
+{"task_id": "reuseport_array.c_238", "completion": "\t\treturn -EBUSY;\n"}
+{"task_id": "wmi.c_3048", "completion": "int wmi_set_keep_alive(struct wil6210_vif *vif, u32 interval)\n{\n\tstruct wil6210_priv *wil = vif_to_wil(vif);\n\tint rc;\n\tstruct wmi_set_keepalive_cmd cmd = {\n\t\t.keepalive_interval = cpu_to_le32(interval),\n\t};\n\tstruct {\n\t\tstruct wmi_cmd_hdr wmi;\n\t\tstruct wmi_set_keepalive_event evt;\n\t} __packed reply = {\n\t\t.evt = {.status = cpu_to_le32(WMI_FW_STATUS_FAILURE)},\n\t};\n\n\twil_dbg_wmi(wil, \"Setting keep alive interval %d\\n\", interval);\n\n\trc = wmi_call(wil, WMI_SET_KEEPALIVE_CMDID, vif->mid,\n\t\t      &cmd, sizeof(cmd),\n\t\t      WMI_SET_KEEPALIVE_EVENTID, &reply, sizeof(reply),\n\t\t      WIL_WMI_CALL_GENERAL_TO_MS);\n\tif (rc)\n\t\treturn rc;\n\n\tif (le32_to_cpu(reply.evt.status) != WMI_FW_STATUS_SUCCESS) {\n\t\twil_err(wil, \"set keep alive failed with status %d\\n\",\n\t\t\tle32_to_cpu(reply.evt.status));\n\t\trc = -EINVAL;\n\t}\n\n\treturn rc;\n}\n"}
+{"task_id": "xhci-mtk-sch.c_601", "completion": "\tstruct xhci_slot_ctx *slot_ctx;\n"}
+{"task_id": "ad7414.c_195", "completion": "\telse {\n"}
+{"task_id": "hts221_spi.c_57", "completion": "\t\t\n"}
+{"task_id": "do_mounts_rd.c_92", "completion": "\t\t\tprintk(KERN_NOTICE\n"}
+{"task_id": "cxd2820r_c.c_182", "completion": "\t\tutmp = buf[1] << 8 | buf[0] << 0;\n"}
+{"task_id": "debug_core.c_186", "completion": "\t\treturn -EINVAL;\n"}
+{"task_id": "cx22702.c_323", "completion": "\tcase HIERARCHY_1:\n"}
+{"task_id": "wm8994-regmap.c_971", "completion": "\tcase WM8994_DAC2_MIXER_VOLUMES:\n"}
+{"task_id": "phy-core.c_579", "completion": "\tif (phy->init_count > 0)\n"}
+{"task_id": "moxart_ether.c_247", "completion": "\t\tif (!skb) {\n"}
+{"task_id": "ixp4xx-beeper.c_104", "completion": "\tinput_dev->id.version = 0x0100;\n"}
+{"task_id": "hung_task.c_203", "completion": "\t\n"}
+{"task_id": "hid-gyration.c_53", "completion": "static int gyration_event(struct hid_device *hdev, struct hid_field *field,\n"}
+{"task_id": "dp.c_531", "completion": "\t\tbreak;\n"}
+{"task_id": "hibernate.c_46", "completion": "static int resume_offset;\n"}
+{"task_id": "pinctrl-stm32h743.c_26", "completion": "\t),\n"}
+{"task_id": "tnum.c_209", "completion": "\treturn tnum_cast(tnum_const(value), 4);\n"}
+{"task_id": "sticore.c_709", "completion": "\traw = kmalloc(size, STI_LOWMEM);\n"}
+{"task_id": "rpm-traces.c_19", "completion": "EXPORT_TRACEPOINT_SYMBOL_GPL(rpm_suspend);\n"}
+{"task_id": "clk-814x.c_91", "completion": "\tfor (i = 0; i < ARRAY_SIZE(init_clocks); i++) {\n"}
+{"task_id": "stackmap.c_309", "completion": "\t\t\tirq_work_busy = true;\n"}
+{"task_id": "namespace.c_135", "completion": "\tput_cgroup_ns(to_cg_ns(ns));\n"}
+{"task_id": "pinctrl-s3c24xx.c_469", "completion": "\tstruct device *dev = d->dev;\n"}
+{"task_id": "hid-sensor-incl-3d.c_233", "completion": "static int incl_3d_parse_report(struct platform_device *pdev,\n"}
+{"task_id": "base.c_95", "completion": "\tchan = nvkm_fifo_chan_inst_locked(fifo, inst);\n"}
+{"task_id": "pfn_devs.c_268", "completion": "\tNULL,\n"}
+{"task_id": "bpf_struct_ops.c_334", "completion": "\tif (err)\n"}
+{"task_id": "rsdump.c_391", "completion": "\t/* Check if debug output enabled */\n"}
+{"task_id": "phy-uniphier-usb3hs.c_316", "completion": "\t.exit           = uniphier_u3hsphy_exit,\n"}
+{"task_id": "monreader.c_345", "completion": "\t\t\tpr_err(\"Severing the z/VM *MONITOR system service \"\n\t\t\t       \"failed with rc=%i\\n\",\n"}
+{"task_id": "kthread.c_952", "completion": "\t\t\t\tunsigned long delay)\n"}
+{"task_id": "ethsw-ethtool.c_38", "completion": "\tstrlcpy(drvinfo->driver, KBUILD_MODNAME,\n\t\tsizeof(drvinfo->driver));\n"}
+{"task_id": "omap2.c_168", "completion": "\t/* Interface to BCHx_HW ECC scheme */\n"}
+{"task_id": "audit_watch.c_143", "completion": "\t\treturn ERR_PTR(-ENOMEM);\n"}
+{"task_id": "tty_ldsem.c_321", "completion": "\tif (count < 0) {\n"}
+{"task_id": "exregion.c_152", "completion": "\t\t    ACPI_ROUND_UP_TO_POWER_2(address, ACPI_DEFAULT_PAGE_SIZE) -\n\t\t    address;\n"}
+{"task_id": "clk-exynos-clkout.c_76", "completion": "\t\t\tcontinue;\n"}
+{"task_id": "debug.c_127", "completion": "\t\t\t   \" (switching)\" : \"\");\n"}
+{"task_id": "loadavg.c_321", "completion": "\t\tavenrun[2] = calc_load_n(avenrun[2], EXP_15, active, n);\n"}
+{"task_id": "rc-kworld-315u.c_58", "completion": "\t\t.size     = ARRAY_SIZE(kworld_315u),\n"}
+{"task_id": "rcu_segcblist.c_518", "completion": "\trcu_segcblist_extract_count(src_rsclp, &donecbs);\n"}
+{"task_id": "clkgen-mux.c_28", "completion": "\tif (!parents)\n"}
+{"task_id": "rwsem.c_943", "completion": "static inline bool rwsem_reader_phase_trylock(struct rw_semaphore *sem,\n"}
+{"task_id": "tx.c_105", "completion": "\ttx_cmd->sta_id = sta_id;\n"}
+{"task_id": "clk-s3c2412.c_37", "completion": "\tCLKCON,\n"}
+{"task_id": "debug.c_226", "completion": "\t\t\tsd_free_ctl_entry(&entry->child);\n\t\telse\n"}
+{"task_id": "i740fb.c_278", "completion": "\t\t\t\twm = 0x25180000;\n"}
+{"task_id": "ehci-sysfs.c_13", "completion": "\tstruct ehci_hcd\t\t*ehci;\n"}
+{"task_id": "rtrs-clt.c_1339", "completion": "\tib_dev = sess->s.dev->ib_dev;\n"}
+{"task_id": "hw_translate_dce120.c_101", "completion": "\t\tcase DC_GPIO_HPD_A__DC_GPIO_HPD1_A_MASK:\n"}
+{"task_id": "intel_punit_ipc.c_126", "completion": "\t\t\tipc_err_string(errcode), status);\n"}
+{"task_id": "phy-omap-usb2.c_325", "completion": "\t\t.compatible = \"ti,dra7x-usb2\",\n"}
+{"task_id": "odm_hwconfig.c_139", "completion": "\t\t\telse if (PWDB_ALL >= 70)\n"}
+{"task_id": "pwm-vt8500.c_74", "completion": "\tstruct vt8500_chip *vt8500 = to_vt8500_chip(chip);\n"}
+{"task_id": "rtl8411.c_247", "completion": "\t\t\tcard_exist = 0;\n"}
+{"task_id": "ti-j721e-ufs.c_55", "completion": "\tif (ret) {\n"}
+{"task_id": "intel_lpe_audio.c_114", "completion": "\tpinfo.size_data = sizeof(*pdata);\n"}
+{"task_id": "piocnv50.c_61", "completion": "\t\tnvkm_error(subdev, \"ch %d timeout0: %08x\\n\", user,\n"}
+{"task_id": "host1x07.c_26", "completion": "\t\n"}
+{"task_id": "adreno_gpu.c_854", "completion": "int adreno_gpu_ocmem_init(struct drm_device *drm, struct platform_device *pdev,\n"}
+{"task_id": "smu8_hwmgr.c_1305", "completion": "\t\t\t\t\t    PPSMC_MSG_VCEPowerOFF,\n"}
+{"task_id": "hdmi.c_595", "completion": "\t\tgoto fail;\n"}
+{"task_id": "stackleak.c_31", "completion": "\t\n"}
+{"task_id": "pm.c_45", "completion": "\t\tdesc->cond_suspend_depth++;\n"}
+{"task_id": "sys_ni.c_409", "completion": "COND_SYSCALL(swapoff);\n"}
+{"task_id": "i2c-riic.c_429", "completion": "\tstrlcpy(adap->name, \"RIIC\", sizeof(adap->name));\n"}
+{"task_id": "devfreq_cooling.c_289", "completion": "static int devfreq_cooling_state2power(struct thermal_cooling_device *cdev,\n"}
+{"task_id": "tdo24m.c_325", "completion": "\t.get_power\t= tdo24m_get_power,\n"}
+{"task_id": "hardwaremanager.c_454", "completion": "\tif (hwmgr->hwmgr_func->get_clock_by_type_with_voltage == NULL)\n"}
+{"task_id": "uid16.c_165", "completion": "\t\t\tgoto out;\n"}
+{"task_id": "regcache-rbtree.c_320", "completion": "\tconst struct reg_default *range;\n"}
+{"task_id": "devtmpfs.c_273", "completion": "\t\tif (err && err != -ENOENT)\n"}
+{"task_id": "coherent.c_143", "completion": "\t\tstruct dma_coherent_mem *mem,\n"}
+{"task_id": "bpf_local_storage.c_47", "completion": "\tif (map->ops->map_owner_storage)\n\t\treturn map->ops->map_owner_storage(smap, owner);\n"}
+{"task_id": "freezer.c_44", "completion": "\tif (pm_nosig_freezing && !(p->flags & PF_KTHREAD))\n"}
+{"task_id": "dm-bufio.c_1507", "completion": "\t\t\tbreak;\n"}
+{"task_id": "bpf_preload_kern.c_15", "completion": "static struct bpf_preload_ops umd_ops = {\n"}
+{"task_id": "process.c_90", "completion": "\t\t\t\t\t\t\t       \"(%d tasks refusing to freeze, wq_busy=%d):\\n\",\n"}
+{"task_id": "nsa320-hwmon.c_87", "completion": "\t\t\tif (gpiod_get_value(hwmon->data))\n"}
+{"task_id": "iterators.bpf.c_34", "completion": "struct btf {\n"}
+{"task_id": "platform-msi.c_176", "completion": "struct irq_domain *platform_msi_create_irq_domain(struct fwnode_handle *fwnode,\n"}
