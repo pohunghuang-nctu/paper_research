@@ -1,0 +1,52 @@
+# 簡報：LSP 對 Code Completion 效果的增強 - C/C++ vs Python
+
+---
+
+## 第一頁：問題與核心論點
+
+### 標題：Language Server Protocol (LSP) 對 Code Completion 效果的增強：C/C++ 與 Python 的比較
+
+### 背景與問題
+
+*   **AI Code Completion 現況：**
+    *   已成為現代開發工具的常見功能。
+    *   普遍認知：在 Python、TypeScript 上的效果優於 C/C++。
+*   **Language Server Protocol (LSP) 的角色：**
+    *   許多 AI 工具藉助 LSP 增強 Code Completion。
+*   **核心問題：**
+    *   LSP 對 Code Completion 的增強效果，在 C/C++ 和 Python 上，何者更為顯著？
+
+### 核心論點
+
+**LSP 對於 C/C++ 的 Code Completion 效果增強，會比在 Python 上更為明顯。**
+
+---
+
+## 第二頁：主要理由與結論
+
+### 為何 LSP 對 C/C++ 影響更大？
+
+1.  **語言本身的複雜性與靜態分析難度：**
+    *   **C/C++：** 極度複雜（巨集、模板、指標、手動記憶體管理、複雜建構系統）。
+        *   傳統靜態分析難以提供精準 Completion。
+        *   LSP (如 `clangd`) 進行深度語義分析，理解複雜結構。
+    *   **Python：** 相對簡潔的動態語言。
+        *   基礎 Completion 可透過較簡單的靜態分析或 introspection 實現。
+
+2.  **LSP 提供的核心能力與「起點」差異：**
+    *   **C/C++：** LSP 帶來的是從「幾乎沒有/非常基礎」到「相當可用/精準」的巨大提升。
+    *   **Python：** LSP 在已有一定基礎（部分編輯器/IDE 已有不錯支援）上進行優化與增強，邊際效益雖大，但不如 C/C++ 的「質變」。
+
+3.  **型別系統的差異：**
+    *   **C/C++：** 靜態型別，LSP 可充分利用編譯時型別資訊。
+    *   **Python：** 動態型別（型別提示可選）。LSP 在有型別提示時效果更佳；AI 模型亦能從無提示碼中學習。
+
+4.  **生態系統和工具鏈：**
+    *   **C/C++：** 工具鏈相對分散，LSP 助於統一介面。
+    *   **Python：** 生態系較集中，許多工具已內建支援。
+
+### 結論
+
+*   LSP 對兩種語言的 Code Completion 均有顯著增強。
+*   然而，考慮到 C/C++ 的固有複雜性、靜態分析的高難度，以及在無 LSP 時 Completion 功能的相對匱乏，LSP 為 C/C++ 帶來的改進幅度更為關鍵和 transformative。
+*   AI Completion 在 Python 上的良好表現，部分得益於其語言特性與 AI 模型的模式學習能力，而 LSP 為兩者都提供了更堅實的語義理解基礎。
