@@ -24,6 +24,8 @@
 
 ## Page 2: Main Reasons & Conclusion
 
+
+
 ### Why Does LSP Impact C/C++ More?
 
 1.  **Language Complexity & Static Analysis Difficulty:**
@@ -50,3 +52,19 @@
 *   LSP significantly enhances Code Completion for both languages.
 *   However, considering C/C++'s inherent complexity, the high difficulty of static analysis, and the relative lack of completion features without LSP, the improvements brought by LSP to C/C++ are more critical and transformative.
 *   The good performance of AI Completion in Python is partly due to its language features and AI models' pattern-learning capabilities, while LSP provides a more solid semantic understanding foundation for both.
+
+---
+## Page 3: C/C++ vs Python Comparison Table
+
+| Item                    | C/C++                                                                 | Python                                                        |
+|-------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------|
+| Type System             | Static typing                                                         | Dynamic typing                                                |
+| Execution Model         | Compiled                                                              | Interpreted                                                   |
+| Memory Management       | Manual                                                                | Automatic                                                     |
+| Syntax Complexity       | High                                                                  | Low                                                           |
+| #include vs import      | `#include` depends on header path specified in build commands (e.g., -I flag); complex project structures require extra configuration | `import` relies on PYTHONPATH or relative/absolute paths; module resolution is straightforward |
+| Development Efficiency  | Requires more effort for syntax, compilation, and debugging           | Fast development, concise code                                |
+| Runtime Performance     | High performance, suitable for demanding applications                 | Lower performance, suitable for data processing, AI, scripting |
+| Application Scenarios   | System software, drivers, embedded, game engines                      | Data science, AI, web, scripting, education                   |
+
+---
