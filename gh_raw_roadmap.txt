@@ -1,0 +1,23 @@
+Roadmap
+
+Our first principle is “EmpoweringEnterprises” .
+
+ 
+
+In our rapidly evolving digital landscape,the success of large-scale organizations in software development is not justbeneficial but essential. GitHub understands this and has tailored its platformto meet these unique enterprise needs. But empowering enterprises isn’t justabout providing a great experience for some of the largest companies. It’sabout giving startups and mid size companies the tools they need to scale andgrow their business, helping them to become enterprise companies. 
+
+ 
+
+By equipping enterprises with AI-poweredtools and integrations, GitHub ensures organizations are on the leading edge ofthe productivity polarity, where they can rapidly innovate, scale, andmaintain a competitive advantage in their respective markets.
+
+ 
+
+Our second principle, "Enhancing theDeveloper Experience," is fundamental in the dynamic world of softwaredevelopment. At GitHub, we are dedicated to transforming the everyday workflowof developers into a more productive, engaging, and fulfilling journey. Byleveraging AI tools like GitHub Copilot, we address the "productivityparadox," significantly enhancing developer efficiency and satisfaction.This ensures that teams work smarter and more efficiently, not just harder.
+
+ 
+
+GitHub underscores its principle of "securityat every step" through a suite of integrated features aimed at enhancingcode security and the platform's robustness. Through tools like Dependabot,which automates the detection and resolution of vulnerabilities independencies, and Code Scanning that proactively identifies security flawswithin the codebase, GitHub facilitates a secure development environment.Additionally, Security Advisories allow for the discreet handling andresolution of vulnerabilities, ensuring issues are managed responsibly beforepublic disclosure.
+
+ 
+
+We have a public roadmap shared here: https://github.com/orgs/github/projects/4247
