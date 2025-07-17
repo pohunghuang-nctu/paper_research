@@ -14,9 +14,9 @@
 
 ## 詳細比較表
 
-| 工具 | 是否支援連接本地模型？ | 實現方式與細節 | 限制與注意事項 |
-| :--- | :--- | :--- | :--- |
-| **Windsurf** | **是 (原生支援)** | Windsurf 企業版 (Enterprise) 提供原生功能，允許客戶自架模型 (self-host) 或連接到任何與 OpenAI API 相容的端點，例如本地執行的 Ollama 或內部網路的私有模型。 | 需要企業版授權。這是目前最完整且直接的本地化解決方案，能確保所有程式碼和推論都在內部網路完成。 |
-| **Cursor** | **是 (透過中介方案)** | 不提供原生支援，但可透過設定一個符合 OpenAI API 格式的代理 (Proxy) 伺服器 (如 `litellm`)，並利用 `ngrok` 等工具將本地服務公開為一個 URL，再將此 URL 填入 Cursor 的自訂 API 設定中。 | 1. **非原生支援**：設定較為複雜。<br>2. **需要網路連線**：部分核心功能 (如程式碼庫索引) 仍需連接 Cursor 的伺服器，無法完全離線使用。<br>3. **功能受限**：部分進階功能 (如 `composer` 和 `tab completion`) 在此模式下可能無法運作。 |
-| **GitHub Copilot** | **否** | Copilot Enterprise 曾提供一個「自訂模型 (Custom Model)」的預覽功能，讓企業用自己的程式碼庫對雲端模型進行微調。但此功能**即將停止**，且不再接受新的訓練請求。它並非真正的本地部署。 | 官方明確表示不使用企業數據進行公開模型訓練，但所有操作都在其雲端基礎設施上進行，無法連接到本地模型。 |
-| **Google Gemini** | **否** | Gemini Code Assist 企業版提供「程式碼客製化 (Code Customization)」，讓企業能用私有程式碼庫來增強雲端模型，以提供更貼切的建議。這是在 Google Cloud 上進行的客製化，而非本地部署。 | 與 Copilot 類似，所有推論和資料處理都在 Google 的雲端環境中完成，提供企業級安全保障，但不支援連接到企業內部網路的本地模型。 |
+| 工具 | 是否支援連接本地模型？ | 實現方式與細節 | 限制與注意事項 | 參考連結 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Windsurf** | **是 (原生支援)** | Windsurf 企業版 (Enterprise) 提供原生功能，允許客戶自架模型 (self-host) 或連接到任何與 OpenAI API 相容的端點，例如本地執行的 Ollama 或內部網路的私有模型。 | 需要企業版授權。這是目前最完整且直接的本地化解決方案，能確保所有程式碼和推論都在內部網路完成。 | [Windsurf Enterprise](https://windsurf.com/enterprise) |
+| **Cursor** | **是 (透過中介方案)** | 不提供原生支援，但可透過設定一個符合 OpenAI API 格式的代理 (Proxy) 伺服器 (如 `litellm`)，並利用 `ngrok` 等工具將本地服務公開為一個 URL，再將此 URL 填入 Cursor 的自訂 API 設定中。 | 1. **非原生支援**：設定較為複雜。<br>2. **需要網路連線**：部分核心功能 (如程式碼庫索引) 仍需連接 Cursor 的伺服器，無法完全離線使用。<br>3. **功能受限**：部分進階功能 (如 `composer` 和 `tab completion`) 在此模式下可能無法運作。 | [Workaround Guide](https://dredyson.com/how-i-integrated-local-llms-like-llama-with-cursor-ide-a-step-by-step-workaround/) |
+| **GitHub Copilot** | **否** | Copilot Enterprise 曾提供一個「自訂模型 (Custom Model)」的預覽功能，讓企業用自己的程式碼庫對雲端模型進行微調。但此功能**即將停止**，且不再接受新的訓練請求。它並非真正的本地部署。 | 官方明確表示不使用企業數據進行公開模型訓練，但所有操作都在其雲端基礎設施上進行，無法連接到本地模型。 | [Custom Model Docs](https://docs.github.com/enterprise-cloud@latest/copilot/customizing-copilot/creating-a-custom-model-for-github-copilot) |
+| **Google Gemini** | **否** | Gemini Code Assist 企業版提供「程式碼客製化 (Code Customization)」，讓企業能用私有程式碼庫來增強雲端模型，以提供更貼切的建議。這是在 Google Cloud 上進行的客製化，而非本地部署。 | 與 Copilot 類似，所有推論和資料處理都在 Google 的雲端環境中完成，提供企業級安全保障，但不支援連接到企業內部網路的本地模型。 | [Gemini Code Assist Overview](https://cloud.google.com/gemini/docs/codeassist/overview) |
