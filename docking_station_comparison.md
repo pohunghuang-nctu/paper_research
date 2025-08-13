@@ -6,10 +6,7 @@
 
 | 特性 | 頂級效能型 (Thunderbolt™ 4) | 高性價比型 (USB-C) |
 | :--- | :--- | :--- |
-| **代表產品** | [Belkin CONNECT Pro](https://www.belkin.com/us/p/P-INC006/)
-<br>[Caldigit TS4](https://www.caldigit.com/thunderbolt-station-4/)
-<br>[j5create JTD562](https://tw.j5create.com/products/jtd562) | [Anker 565 11-in-1](https://www.anker.com/products/a8383)
-<br>[UGREEN 9-in-1](https://www.ugreen.com/products/9-in-1-usb-c-hub-with-4k-hdmi-and-1080p-vga) |
+| **代表產品** | [Belkin CONNECT Pro](https://www.belkin.com/us/p/P-INC006/)<br>[Caldigit TS4](https://www.caldigit.com/thunderbolt-station-4/) | [Anker 565 11-in-1](https://www.anker.com/products/a8383)<br>[UGREEN 9-in-1](https://www.ugreen.com/products/9-in-1-usb-c-hub-with-4k-hdmi-and-1080p-vga)<br>[j5create JTD562](https://tw.j5create.com/products/jtd562) |
 | **連接技術** | Thunderbolt™ 4 | USB-C (需支援 DP Alt Mode) |
 | **影像輸出** | **極致**<br>通常支援 2 組 4K@60Hz 或 1 組 8K@30Hz。接口多為 DP + HDMI 組合。 | **足夠**<br>通常支援 2 組 4K@30Hz 或 1080p@60Hz。**注意**部分產品雙螢幕模式下更新率會降低。 |
 | **充電功率(PD)** | **高** (通常 90W - 100W) | **中等** (通常 65W - 85W，需搭配筆電原廠充電器) |
