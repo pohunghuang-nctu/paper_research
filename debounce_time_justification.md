@@ -20,14 +20,3 @@
 **佐證資料：** 來自 Nielsen Norman Group 的頂尖 UX 研究強調，應透過避免干擾性且不必要的介面變動，來最小化使用者的認知負荷。
 *   **來源：** [Nielsen Norman Group: Minimize Cognitive Load to Maximize Usability](https://www.nngroup.com/articles/minimize-cognitive-load/)
 
-## 論點三：在「回應速度」、「成本」與「品質」之間達成最佳平衡
-
-**論點：** 500ms 這個數值在「使用者感知的系統回應速度」、「AI 建議的運算成本」以及「建議本身的品質」這三者之間取得了最佳的權衡。
-
-**闡述：**
-*   **回應速度：** 對使用者來說，500ms 的延遲遠低於會打斷思緒的 1 秒鐘門檻，因此互動體驗依然感覺即時且順暢。
-*   **成本與效率：** 由 AI 驅動的程式碼補全功能運算成本高昂。500ms 的延遲能大幅減少發送到後端的 API 請求數量，顯著節省運算成本並提升系統效率。
-*   **品質：** 更長的延遲給了 AI 模型更充裕的時間去分析更完整的程式碼片段，從而生成品質更高、更準確也更有用的程式碼建議。
-
-**佐證資料：** 許多技術文章和最佳實踐都經常使用 500ms 作為經典範例，來說明如何在 debounce 的實作中平衡系統效能與使用者體驗。
-*   **來源：** [ExpertBeacon: Debounce Explained](https://expertbeacon.com/debounce-explained-how-to-make-your-javascript-wait-for-your-user-to-finish-typing/)
