@@ -1,6 +1,6 @@
 curl -X POST --header "Content-Type: application/json" \
 --data '{
-  "service_key": "<secret>",
+  "service_key": "VHCcJeXPakRfwjdGIHrn5iKif94=",
   "query_requests": [
     {
       "data_source": "QUERY_DATA_SOURCE_USER_DATA",
