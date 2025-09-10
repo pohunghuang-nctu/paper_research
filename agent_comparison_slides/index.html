@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windsurf Cascade vs. Claude Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Windsurf Cascade vs. Claude Code</h1>
+                <p>Agentic Coding Assistants 比較</p>
+            </section>
+
+            <section>
+                <h2>簡介</h2>
+                <p>Windsurf Cascade 和 Claude Code 都是頂尖的 Agentic Coding 工具，旨在提升開發效率。本簡報將深入比較兩者的核心理念、功能、工作流程及適用情境。</p>
+            </section>
+
+            <section>
+                <h2>核心理念與使用者介面</h2>
+                <div class="comparison-container">
+                    <div class="comparison-item">
+                        <h3>Windsurf Cascade</h3>
+                        <p><strong>以 IDE 為中心</strong>，提供視覺化、流暢的「心流」開發體驗。所有互動都在熟悉的編輯器環境中完成。</p>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>Claude Code</h3>
+                        <p><strong>以終端機為中心</strong>，專為重度終端機使用者設計的命令列介面，將 AI 能力帶入開發者最熟悉的環境。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>主要功能 - Windsurf Cascade</h2>
+                <ul>
+                    <li><strong>深度 IDE 整合</strong>: 追蹤檔案編輯、終端機指令等，實現真正的情境感知。</li>
+                    <li><strong>心流感知 (Flow Awareness)</strong>: 從使用者的連續操作中推斷意圖，主動提供下一步建議。</li>
+                    <li><strong>網頁工具整合</strong>: 內建瀏覽器、網頁搜尋與一鍵部署功能，打通從開發到預覽的完整循環。</li>
+                    <li><strong>高度客製化</strong>: 可透過規則 (Rules)、記憶 (Memories) 和工作流 (Workflows) 進行個人化設定。</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>主要功能 - Claude Code</h2>
+                <ul>
+                    <li><strong>終端機優先體驗</strong>: 所有互動皆透過指令完成，與 Shell 指令無縫接軌。</li>
+                    <li><strong>Agentic 搜尋</strong>: 無需手動指定檔案，即可自動搜尋並理解整個程式碼庫。</li>
+                    <li><strong>直接指令執行</strong>: 可直接執行 Git、測試框架、建置工具等指令。</li>
+                    <li><strong>高度可擴充性</strong>: 支援自訂斜線指令 (`/command`) 和 Hooks，可深度整合至既有腳本。</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>工作流程與互動模型</h2>
+                 <div class="comparison-container">
+                    <div class="comparison-item">
+                        <h3>Windsurf Cascade</h3>
+                        <p><strong>對話式、迭代式開發</strong>。使用者在 IDE 的聊天面板中與 Cascade 互動，程式碼變更會即時反應在編輯器中，並可輕鬆預覽與還原。</p>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>Claude Code</h3>
+                        <p><strong>指令驅動</strong>。使用者在終端機中下達明確指令，Claude Code 執行後回報結果。更適合自動化與腳本化任務。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>優勢分析</h2>
+                <div class="comparison-container">
+                    <div class="comparison-item">
+                        <h3>Windsurf Cascade 的優勢</h3>
+                        <ul>
+                            <li>無縫的整合體驗，心流不易被打斷。</li>
+                            <li>對視覺化任務（如前端開發）更友善。</li>
+                            <li>對 AI 新手或非終端機重度使用者門檻較低。</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>Claude Code 的優勢</h3>
+                        <ul>
+                            <li>強大的後端與系統任務處理能力。</li>
+                            <li>高度可編寫性，易於整合進自動化腳本。</li>
+                            <li>與資深開發者熟悉的終端機工作流程自然結合。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>功能細節比較</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>功能</th>
+                                <th>Windsurf Cascade</th>
+                                <th>Claude Code (IDE Extension)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>對話歷史</td>
+                                <td>✅ (透過 IDE 的 UI 面板)</td>
+                                <td>✅ (透過 IDE 的 UI 面板)</td>
+                            </tr>
+                            <tr>
+                                <td>拖放檔案至對話</td>
+                                <td>✅ (支援，顯示為小標籤)</td>
+                                <td>❌ (透過提示詞引用檔案路徑)</td>
+                            </tr>
+                            <tr>
+                                <td>高亮程式碼並傳送</td>
+                                <td>✅ (使用 Ctrl+L 或右鍵選單)</td>
+                                <td>✅ (自動分享選取範圍)</td>
+                            </tr>
+                            <tr>
+                                <td>程式碼庫全域理解</td>
+                                <td>✅ (自動本地索引)</td>
+                                <td>✅ (自動 Agentic Search)</td>
+                            </tr>
+                            <tr>
+                                <td>計畫模式切換</td>
+                                <td>✅ (UI 按鈕切換)</td>
+                                <td>✅ (使用 Shift+Tab 或啟動參數)</td>
+                            </tr>
+                            <tr>
+                                <td>MCP 伺服器設定</td>
+                                <td>✅ (透過外掛商店與設定檔)</td>
+                                <td>✅ (透過 `claude mcp add` 指令)</td>
+                            </tr>
+                            <tr>
+                                <td>過程資訊編排</td>
+                                <td>✅ (在 UI 中以可收合區塊顯示)</td>
+                                <td>⚠️ (終端機畫面閃爍快速，易造成炫目)</td>
+                            </tr>
+                            <tr>
+                                <td>在提示中換行</td>
+                                <td>✅ (使用 Shift+Enter)</td>
+                                <td>⚠️ (使用 \ + Enter)</td>
+                            </tr>
+                            <tr>
+                                <td>選取模型</td>
+                                <td>✅ (透過對話框下方的 UI 下拉式選單)</td>
+                                <td>✅ (透過修改設定檔或指令參數)</td>
+                            </tr>
+                            <tr>
+                                <td>差異/修改顯示方式</td>
+                                <td>✅ (直接寫入檔案以供即時預覽，可還原)</td>
+                                <td>✅ (可設定使用 IDE 內建的 Diff Viewer)</td>
+                            </tr>
+                            <tr>
+                                <td>多任務同步執行</td>
+                                <td>✅ (支援 Simultaneous Cascades)</td>
+                                <td>✅ (可在多個終端機面板中執行多個實例)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>該選擇誰？</h2>
+                <div class="comparison-container">
+                     <div class="comparison-item">
+                        <h3>選擇 Windsurf Cascade 如果...</h3>
+                        <ul>
+                            <li>您是前端開發者或全端開發者。</li>
+                            <li>您偏好在整合式 IDE 環境中工作。</li>
+                            <li>您喜歡視覺化的回饋與流暢的迭代過程。</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>選擇 Claude Code 如果...</h3>
+                        <ul>
+                            <li>您是後端或系統工程師。</li>
+                            <li>您每天大量時間都在使用終端機。</li>
+                            <li>您希望將 AI 能力整合進您的自動化腳本中。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>結論</h2>
+                <p>Windsurf Cascade 和 Claude Code 並非互相取代，而是針對不同開發哲學和工作流程的工具。</p>
+                <p><strong>Cascade</strong> 像是一位坐在你旁邊的視覺化協作者；而 <strong>Claude Code</strong> 則像是一位能力超群的終端機專家。最好的選擇，取決於您的個人偏好與主要的工作類型。</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
