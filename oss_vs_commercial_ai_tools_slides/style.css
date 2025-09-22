@@ -1213,17 +1213,32 @@ body {
     margin-bottom: 0;
 }
 
-/* Scroll support for slide content */
-.slide-wrapper {
+/* Scroll support for single slide mode */
+.single-slide-container .slide-wrapper {
     flex: 1;
     overflow-y: auto;
     padding-top: 80px;
 }
 
-.slide-content {
+.single-slide-container .slide {
+    position: static;
+    height: auto;
+    min-height: calc(100vh - 80px);
+    opacity: 1;
+    transform: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+}
+
+.single-slide-container .slide-content {
     max-height: none;
-    min-height: calc(100vh - 120px);
+    min-height: auto;
     padding: 40px 60px 60px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 /* Adjust cost overview for better spacing */
