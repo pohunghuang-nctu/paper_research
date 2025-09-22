@@ -1273,3 +1273,217 @@ body {
         padding: 30px 20px 40px;
     }
 }
+
+/* DeepWiki 功能比較樣式 */
+.comparison-container {
+    margin: 2rem 0;
+}
+
+.feature-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tool-section {
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.windsurf-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border: 2px solid #2196f3;
+}
+
+.roocode-section {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
+    border: 2px solid #ff9800;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.feature-box.available {
+    border-left: 5px solid #4caf50;
+}
+
+.feature-box.unavailable {
+    border-left: 5px solid #f44336;
+}
+
+.feature-box h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-box li {
+    margin: 0.8rem 0;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-box li::before {
+    content: '•';
+    color: #2196f3;
+    font-weight: bold;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.feature-highlight, .feature-note {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.impact-analysis {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border: 2px solid #9c27b0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.impact-analysis h3 {
+    color: #7b1fa2;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.impact-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.impact-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.impact-item h4 {
+    color: #4a148c;
+    margin-bottom: 1rem;
+}
+
+.impact-bar {
+    margin: 1rem 0;
+}
+
+.bar {
+    display: block;
+    height: 25px;
+    margin: 0.5rem 0;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+    font-size: 0.9rem;
+    transition: width 0.8s ease;
+}
+
+.windsurf-bar {
+    background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
+}
+
+.roocode-bar {
+    background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%);
+}
+
+.use-case-scenarios {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+    border: 2px solid #4caf50;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.use-case-scenarios h3 {
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.scenario-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.scenario-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #4caf50;
+}
+
+.scenario-card h4 {
+    color: #1b5e20;
+    margin-bottom: 1rem;
+}
+
+.scenario-comparison {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.windsurf-scenario, .roocode-scenario {
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.windsurf-scenario {
+    background: rgba(33, 150, 243, 0.1);
+    border-left: 3px solid #2196f3;
+}
+
+.roocode-scenario {
+    background: rgba(255, 152, 0, 0.1);
+    border-left: 3px solid #ff9800;
+}
+
+.source-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* DeepWiki 響應式設計 */
+@media (max-width: 768px) {
+    .feature-comparison {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .impact-bar {
+        font-size: 0.8rem;
+    }
+    
+    .bar {
+        height: 20px;
+        line-height: 20px;
+    }
+}
