@@ -1,0 +1,1260 @@
+/* 基礎樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.presentation-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 導航樣式 */
+.single-slide-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.slide-counter {
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.nav-menu {
+    position: relative;
+}
+
+.menu-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slide-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.slide-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.menu-item.special {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 5px;
+    color: #ffd700;
+}
+
+/* Slides 容器 */
+.slides-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px 40px;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide.prev {
+    transform: translateX(-100px);
+}
+
+.slide-content {
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 60px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 標題頁樣式 */
+.title-slide {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.author-info {
+    margin: 40px 0;
+}
+
+.author {
+    font-size: 1.2rem;
+    color: #667eea;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 1rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+.title-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.title-icons i {
+    font-size: 3rem;
+    color: #667eea;
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite;
+}
+
+.title-icons i:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.title-icons i:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 一般 slide 樣式 */
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.slide-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* 內容網格 */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.content-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.content-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.icon-wrapper i {
+    font-size: 24px;
+    color: white;
+}
+
+.content-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.content-item p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* 比較概覽樣式 */
+.comparison-overview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.tool-card {
+    flex: 1;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card.commercial {
+    border-left: 5px solid #667eea;
+}
+
+.tool-card.opensource {
+    border-left: 5px solid #28a745;
+}
+
+.tool-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.tool-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.tool-type {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tool-type.commercial {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.tool-type.opensource {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.tool-features ul {
+    list-style: none;
+}
+
+.tool-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 1rem;
+}
+
+.tool-features i {
+    color: #28a745;
+    font-size: 14px;
+}
+
+.vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 進度條 */
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.6s ease;
+    width: 5%;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 40px 30px;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .slide-title {
+        font-size: 2rem;
+    }
+    
+    .comparison-overview {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .vs-divider {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .slide-nav {
+        top: 10px;
+        padding: 8px 16px;
+    }
+    
+    .nav-btn, .menu-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
+
+/* 功能展示樣式 */
+.feature-showcase {
+    margin-top: 40px;
+}
+
+.feature-header h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.feature-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* 分析容器樣式 */
+.analysis-container {
+    margin-top: 40px;
+}
+
+.analysis-category h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.analysis-category h3 i {
+    color: #667eea;
+}
+
+.capability-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.capability-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.capability-item > span {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.bar-container {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.bar {
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.bar.windsurf {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.bar.roocode {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+/* 比較表格樣式 */
+.comparison-table-container {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.comparison-table th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.comparison-table td {
+    font-size: 1rem;
+    color: #333;
+}
+
+.windsurf-col {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.roocode-col {
+    background: rgba(40, 167, 69, 0.05);
+}
+
+.comparison-table i.fa-check-circle {
+    color: #28a745;
+    margin-right: 8px;
+}
+
+.comparison-table i.fa-times-circle {
+    color: #dc3545;
+    margin-right: 8px;
+}
+
+.comparison-table i.fa-minus-circle {
+    color: #ffc107;
+    margin-right: 8px;
+}
+
+/* 效能卡片樣式 */
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.performance-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.performance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.performance-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.metric-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+}
+
+.tool-name {
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.tool-name.windsurf {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.tool-name.roocode {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.metric-value {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.metric-note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* 架構比較樣式 */
+.architecture-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.arch-column {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.arch-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.arch-title.windsurf {
+    color: #667eea;
+}
+
+.arch-title.roocode {
+    color: #28a745;
+}
+
+.arch-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.arch-layer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.layer-box {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    min-width: 200px;
+}
+
+.layer-box.windsurf {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.layer-box.roocode {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.arch-arrow {
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: bold;
+}
+
+.arch-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.arch-features li {
+    padding: 8px 0;
+    color: #666;
+    position: relative;
+    padding-left: 20px;
+}
+
+.arch-features li::before {
+    content: '•';
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* 成本分析樣式 */
+.cost-overview {
+    margin-top: 40px;
+}
+
+.cost-category h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cost-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.cost-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.cost-item.windsurf {
+    border-left: 5px solid #667eea;
+}
+
+.cost-item.roocode {
+    border-left: 5px solid #28a745;
+}
+
+.cost-item h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cost-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tier {
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #666;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.cost-item.windsurf .tier {
+    border-left-color: #667eea;
+}
+
+.cost-item.roocode .tier {
+    border-left-color: #28a745;
+}
+
+.tier:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .architecture-comparison,
+    .cost-comparison {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .performance-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .comparison-table-container {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        padding: 60px 20px 20px;
+    }
+    
+    .slide-content {
+        padding: 30px 20px;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .slide-title {
+        font-size: 1.6rem;
+    }
+    
+    .feature-item {
+        padding: 20px;
+    }
+    
+    .performance-card {
+        padding: 20px;
+    }
+    
+    .arch-column,
+    .cost-item {
+        padding: 20px;
+    }
+}
+
+/* 單頁模式樣式 */
+.single-slide-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.single-slide-container .slide-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-slide-container .slide {
+    position: static;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px 40px;
+}
+
+.single-slide-container .nav-btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-slide-container .nav-btn.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.single-slide-container .menu-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.single-slide-container .menu-item.special {
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    padding-top: 15px;
+    color: #667eea;
+    font-weight: 500;
+}
+
+.single-slide-container .menu-item:hover {
+    background: #f0f0f0;
+    color: #667eea;
+}
+
+/* Enhanced Cost Analysis Styles */
+.cost-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 20px 0;
+}
+
+.cost-category {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.cost-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #4ecdc4, #44a08d);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    z-index: -1;
+}
+
+.cost-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Data Sources Section */
+.data-sources {
+    border: 2px solid #ffd700;
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+}
+
+.data-sources::before {
+    background: linear-gradient(135deg, #ffd700, #ffed4e, #ff6b6b, #4ecdc4);
+}
+
+.source-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.source-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.source-item h4 {
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.source-details p {
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.source-details a {
+    color: #4ecdc4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.source-details a:hover {
+    color: #44a08d;
+    text-decoration: underline;
+}
+
+.source-quotes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quote {
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 4px solid #ffd700;
+    padding: 15px;
+    border-radius: 8px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.quote i {
+    color: #ffd700;
+    margin-right: 10px;
+}
+
+.pricing-table {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-header {
+    color: #ffd700;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row span:first-child {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.table-row span:last-child {
+    color: white;
+    font-weight: 500;
+}
+
+/* Enhanced Token Analysis Section */
+.token-analysis {
+    background: linear-gradient(145deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+/* Enhanced Total Cost Comparison */
+.total-cost-comparison {
+    background: linear-gradient(145deg, rgba(33, 150, 243, 0.1), rgba(33, 150, 243, 0.05));
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+/* Enhanced Hidden Costs Section */
+.hidden-costs {
+    background: linear-gradient(145deg, rgba(156, 39, 176, 0.1), rgba(156, 39, 176, 0.05));
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+/* Horizontal layout for cost comparison and hidden costs */
+.cost-comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.cost-comparison-left,
+.cost-comparison-right {
+    margin-bottom: 0;
+}
+
+/* Scroll support for slide content */
+.slide-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 80px;
+}
+
+.slide-content {
+    max-height: none;
+    min-height: calc(100vh - 120px);
+    padding: 40px 60px 60px;
+}
+
+/* Adjust cost overview for better spacing */
+.cost-overview {
+    gap: 25px;
+    padding: 10px 0;
+}
+
+.cost-category {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .source-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .cost-category {
+        padding: 20px;
+    }
+    
+    .cost-category::before {
+        padding: 1px;
+    }
+    
+    .cost-comparison-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .slide-content {
+        padding: 30px 20px 40px;
+    }
+}

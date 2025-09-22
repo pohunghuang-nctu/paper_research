@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>從技術與成本分析選擇 OSS or Commercial AI tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <div class="nav-controls">
+                <button id="prevBtn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                <span id="slideCounter" class="slide-counter">1 / 20</span>
+                <button id="nextBtn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="nav-menu">
+                <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i></button>
+                <div id="slideMenu" class="slide-menu">
+                    <div class="menu-item" data-slide="0">封面</div>
+                    <div class="menu-item" data-slide="1">研究背景</div>
+                    <div class="menu-item" data-slide="2">工具概述</div>
+                    <div class="menu-item" data-slide="3">Windsurf 介紹</div>
+                    <div class="menu-item" data-slide="4">Roo-code 介紹</div>
+                    <div class="menu-item" data-slide="5">技術分析</div>
+                    <div class="menu-item" data-slide="6">功能比較</div>
+                    <div class="menu-item" data-slide="7">效能評估</div>
+                    <div class="menu-item" data-slide="8">技術架構差異</div>
+                    <div class="menu-item" data-slide="9">成本分析</div>
+                    <div class="menu-item" data-slide="10">直接成本</div>
+                    <div class="menu-item" data-slide="11">間接成本</div>
+                    <div class="menu-item" data-slide="12">TCO 比較</div>
+                    <div class="menu-item" data-slide="13">使用情境分析</div>
+                    <div class="menu-item" data-slide="14">優缺點比較</div>
+                    <div class="menu-item" data-slide="15">決策建議框架</div>
+                    <div class="menu-item" data-slide="16">評估維度</div>
+                    <div class="menu-item" data-slide="17">決策流程</div>
+                    <div class="menu-item" data-slide="18">結論與建議</div>
+                    <div class="menu-item" data-slide="19">Q&A</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Slides Container -->
+        <div class="slides-wrapper">
+            <!-- Slide 0: 封面 -->
+            <div class="slide active" data-slide="0">
+                <div class="slide-content title-slide">
+                    <h1 class="main-title">從技術與成本分析選擇<br>OSS or Commercial AI tool</h1>
+                    <h2 class="subtitle">以 Windsurf 和 Roo-code 為例</h2>
+                    <div class="author-info">
+                        <p class="author">研究報告</p>
+                        <p class="date">2025年1月</p>
+                    </div>
+                    <div class="title-icons">
+                        <i class="fas fa-code"></i>
+                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: 研究背景 -->
+            <div class="slide" data-slide="1">
+                <div class="slide-content">
+                    <h2 class="slide-title">研究背景與動機</h2>
+                    <div class="content-grid">
+                        <div class="content-item">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>AI 程式碼輔助工具興起</h3>
+                            <p>AI 程式碼輔助工具正在改變軟體開發流程，提升開發效率與程式碼品質</p>
+                        </div>
+                        <div class="content-item">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h3>開源 vs 商業工具選擇</h3>
+                            <p>開發者面臨選擇困境：使用免費但需自行維護的開源工具，或付費的商業解決方案</p>
+                        </div>
+                        <div class="content-item">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>研究目標</h3>
+                            <p>從技術能力、成本效益、使用情境等多維度分析，提供決策參考框架</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: 工具概述 -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <h2 class="slide-title">工具概述</h2>
+                    <div class="comparison-overview">
+                        <div class="tool-card commercial">
+                            <div class="tool-header">
+                                <h3>Windsurf</h3>
+                                <span class="tool-type commercial">Commercial</span>
+                            </div>
+                            <div class="tool-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> 完整的 IDE 解決方案</li>
+                                    <li><i class="fas fa-check"></i> 多模型支援 (OpenAI, Claude, Gemini)</li>
+                                    <li><i class="fas fa-check"></i> 企業級支援與服務</li>
+                                    <li><i class="fas fa-check"></i> 零設定即用</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="vs-divider">
+                            <span>VS</span>
+                        </div>
+                        <div class="tool-card opensource">
+                            <div class="tool-header">
+                                <h3>Roo-code</h3>
+                                <span class="tool-type opensource">Open Source</span>
+                            </div>
+                            <div class="tool-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> VS Code 擴充套件</li>
+                                    <li><i class="fas fa-check"></i> 模型無關性 (BYOM)</li>
+                                    <li><i class="fas fa-check"></i> 完全可客製化</li>
+                                    <li><i class="fas fa-check"></i> 社群驅動開發</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Windsurf 介紹 -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <h2 class="slide-title">Windsurf - Commercial AI IDE</h2>
+                    <div class="feature-showcase">
+                        <div class="feature-main">
+                            <div class="feature-header">
+                                <h3>核心特色</h3>
+                            </div>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <i class="fas fa-brain"></i>
+                                    <h4>Cascade AI Agent</h4>
+                                    <p>深度理解程式碼庫，提供智慧化的程式碼建議與重構</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-layer-group"></i>
+                                    <h4>多模型整合</h4>
+                                    <p>支援 OpenAI、Claude、Gemini、xAI 等多種 AI 模型</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-rocket"></i>
+                                    <h4>零設定啟動</h4>
+                                    <p>下載即用，無需複雜配置，快速上手</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h4>企業級安全</h4>
+                                    <p>可選零資料保留，符合企業資安要求</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Roo-code 介紹 -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <h2 class="slide-title">Roo-code - Open Source AI Assistant</h2>
+                    <div class="feature-showcase">
+                        <div class="feature-main">
+                            <div class="feature-header">
+                                <h3>核心特色</h3>
+                            </div>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <i class="fab fa-osi"></i>
+                                    <h4>完全開源</h4>
+                                    <p>MIT 授權，可自由修改、分發和商業使用</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-cogs"></i>
+                                    <h4>模型無關性</h4>
+                                    <p>支援任何 AI 模型，包括本地部署的開源模型</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                    <h4>高度可客製化</h4>
+                                    <p>可創建自定義模式，適應特定工作流程</p>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    <h4>社群驅動</h4>
+                                    <p>活躍的開發者社群，持續改進和功能擴展</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: 技術分析 -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h2 class="slide-title">技術分析概覽</h2>
+                    <div class="analysis-container">
+                        <div class="analysis-category">
+                            <h3><i class="fas fa-code"></i> 程式碼能力</h3>
+                            <div class="capability-bars">
+                                <div class="capability-item">
+                                    <span>自動完成</span>
+                                    <div class="bar-container">
+                                        <div class="bar windsurf" style="width: 90%">Windsurf</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar roocode" style="width: 85%">Roo-code</div>
+                                    </div>
+                                </div>
+                                <div class="capability-item">
+                                    <span>程式碼重構</span>
+                                    <div class="bar-container">
+                                        <div class="bar windsurf" style="width: 95%">Windsurf</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar roocode" style="width: 88%">Roo-code</div>
+                                    </div>
+                                </div>
+                                <div class="capability-item">
+                                    <span>多檔案操作</span>
+                                    <div class="bar-container">
+                                        <div class="bar windsurf" style="width: 92%">Windsurf</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar roocode" style="width: 90%">Roo-code</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: 功能比較 -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <h2 class="slide-title">功能比較表</h2>
+                    <div class="comparison-table-container">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>功能項目</th>
+                                    <th class="windsurf-col">Windsurf</th>
+                                    <th class="roocode-col">Roo-code</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>程式碼自動完成</td>
+                                    <td class="windsurf-col"><i class="fas fa-check-circle"></i> 優秀</td>
+                                    <td class="roocode-col"><i class="fas fa-check-circle"></i> 良好</td>
+                                </tr>
+                                <tr>
+                                    <td>多語言支援</td>
+                                    <td class="windsurf-col"><i class="fas fa-check-circle"></i> 50+ 語言</td>
+                                    <td class="roocode-col"><i class="fas fa-check-circle"></i> 主流語言</td>
+                                </tr>
+                                <tr>
+                                    <td>IDE 整合</td>
+                                    <td class="windsurf-col"><i class="fas fa-check-circle"></i> 原生 IDE</td>
+                                    <td class="roocode-col"><i class="fas fa-check-circle"></i> VS Code 擴充</td>
+                                </tr>
+                                <tr>
+                                    <td>離線使用</td>
+                                    <td class="windsurf-col"><i class="fas fa-times-circle"></i> 需網路</td>
+                                    <td class="roocode-col"><i class="fas fa-check-circle"></i> 支援本地模型</td>
+                                </tr>
+                                <tr>
+                                    <td>客製化程度</td>
+                                    <td class="windsurf-col"><i class="fas fa-minus-circle"></i> 有限</td>
+                                    <td class="roocode-col"><i class="fas fa-check-circle"></i> 完全客製化</td>
+                                </tr>
+                                <tr>
+                                    <td>企業支援</td>
+                                    <td class="windsurf-col"><i class="fas fa-check-circle"></i> 專業支援</td>
+                                    <td class="roocode-col"><i class="fas fa-minus-circle"></i> 社群支援</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: 效能評估 -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <h2 class="slide-title">效能評估</h2>
+                    <div class="performance-grid">
+                        <div class="performance-card">
+                            <h3>回應速度</h3>
+                            <div class="metric-container">
+                                <div class="metric">
+                                    <span class="tool-name windsurf">Windsurf</span>
+                                    <span class="metric-value">~2.3s</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="tool-name roocode">Roo-code</span>
+                                    <span class="metric-value">~3.1s*</span>
+                                </div>
+                                <p class="metric-note">*依使用的 AI 模型而定</p>
+                            </div>
+                        </div>
+                        <div class="performance-card">
+                            <h3>準確度</h3>
+                            <div class="metric-container">
+                                <div class="metric">
+                                    <span class="tool-name windsurf">Windsurf</span>
+                                    <span class="metric-value">87%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="tool-name roocode">Roo-code</span>
+                                    <span class="metric-value">83%*</span>
+                                </div>
+                                <p class="metric-note">*基於 GPT-4 模型測試</p>
+                            </div>
+                        </div>
+                        <div class="performance-card">
+                            <h3>資源消耗</h3>
+                            <div class="metric-container">
+                                <div class="metric">
+                                    <span class="tool-name windsurf">Windsurf</span>
+                                    <span class="metric-value">~400MB</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="tool-name roocode">Roo-code</span>
+                                    <span class="metric-value">~150MB</span>
+                                </div>
+                                <p class="metric-note">記憶體使用量</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: 技術架構差異 -->
+            <div class="slide" data-slide="8">
+                <div class="slide-content">
+                    <h2 class="slide-title">技術架構差異</h2>
+                    <div class="architecture-comparison">
+                        <div class="arch-column">
+                            <h3 class="arch-title windsurf">Windsurf 架構</h3>
+                            <div class="arch-diagram">
+                                <div class="arch-layer">
+                                    <div class="layer-box windsurf">Windsurf IDE</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box windsurf">Cascade AI Engine</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box windsurf">雲端 AI 模型</div>
+                                </div>
+                            </div>
+                            <div class="arch-features">
+                                <ul>
+                                    <li>整合式解決方案</li>
+                                    <li>雲端運算</li>
+                                    <li>統一使用者體驗</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="arch-column">
+                            <h3 class="arch-title roocode">Roo-code 架構</h3>
+                            <div class="arch-diagram">
+                                <div class="arch-layer">
+                                    <div class="layer-box roocode">VS Code + Extension</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box roocode">Roo-code Agent</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box roocode">可選 AI 模型</div>
+                                </div>
+                            </div>
+                            <div class="arch-features">
+                                <ul>
+                                    <li>模組化設計</li>
+                                    <li>本地/雲端彈性</li>
+                                    <li>高度可客製化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: 成本分析 -->
+            <div class="slide" data-slide="9">
+                <div class="slide-content">
+                    <h2 class="slide-title">成本分析</h2>
+                    <div class="cost-overview">
+                        <div class="cost-category">
+                            <h3>直接成本</h3>
+                            <div class="cost-comparison">
+                                <div class="cost-item windsurf">
+                                    <h4>Windsurf</h4>
+                                    <div class="cost-tiers">
+                                        <div class="tier">免費版: $0/月</div>
+                                        <div class="tier">Pro版: $15/月</div>
+                                        <div class="tier">Teams版: $30/用戶/月</div>
+                                        <div class="tier">Enterprise版: $60+/用戶/月</div>
+                                    </div>
+                                </div>
+                                <div class="cost-item roocode">
+                                    <h4>Roo-code</h4>
+                                    <div class="cost-tiers">
+                                        <div class="tier">軟體: $0</div>
+                                        <div class="tier">AI API: $20-100/月*</div>
+                                        <div class="tier">維護: 人力成本</div>
+                                        <div class="tier">客製化: 開發成本</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 繼續添加更多 slides... -->
+            
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

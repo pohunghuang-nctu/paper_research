@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具概述 - OSS vs Commercial AI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="single-slide-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <div class="nav-controls">
+                <a href="slide-01.html" class="nav-btn"><i class="fas fa-chevron-left"></i></a>
+                <span class="slide-counter">3 / 20</span>
+                <a href="slide-03.html" class="nav-btn"><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="nav-menu">
+                <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i></button>
+                <div id="slideMenu" class="slide-menu">
+                    <a href="slide-00.html" class="menu-item">封面</a>
+                    <a href="slide-01.html" class="menu-item">研究背景</a>
+                    <a href="slide-02.html" class="menu-item active">工具概述</a>
+                    <a href="slide-03.html" class="menu-item">Windsurf 介紹</a>
+                    <a href="slide-04.html" class="menu-item">Roo-code 介紹</a>
+                    <a href="slide-05.html" class="menu-item">技術分析</a>
+                    <a href="slide-06.html" class="menu-item">功能比較</a>
+                    <a href="slide-07.html" class="menu-item">效能評估</a>
+                    <a href="slide-08.html" class="menu-item">技術架構差異</a>
+                    <a href="slide-09.html" class="menu-item">成本分析</a>
+                    <a href="index.html" class="menu-item special">回到主頁</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Single Slide Content -->
+        <div class="slide-wrapper">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h2 class="slide-title">工具概述</h2>
+                    <div class="comparison-overview">
+                        <div class="tool-card commercial">
+                            <div class="tool-header">
+                                <h3>Windsurf</h3>
+                                <span class="tool-type commercial">Commercial</span>
+                            </div>
+                            <div class="tool-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> 完整的 IDE 解決方案</li>
+                                    <li><i class="fas fa-check"></i> 多模型支援 (OpenAI, Claude, Gemini)</li>
+                                    <li><i class="fas fa-check"></i> 企業級支援與服務</li>
+                                    <li><i class="fas fa-check"></i> 零設定即用</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="vs-divider">
+                            <span>VS</span>
+                        </div>
+                        <div class="tool-card opensource">
+                            <div class="tool-header">
+                                <h3>Roo-code</h3>
+                                <span class="tool-type opensource">Open Source</span>
+                            </div>
+                            <div class="tool-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> VS Code 擴充套件</li>
+                                    <li><i class="fas fa-check"></i> 模型無關性 (BYOM)</li>
+                                    <li><i class="fas fa-check"></i> 完全可客製化</li>
+                                    <li><i class="fas fa-check"></i> 社群驅動開發</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 15%"></div>
+        </div>
+    </div>
+
+    <script src="single-slide.js"></script>
+</body>
+</html>

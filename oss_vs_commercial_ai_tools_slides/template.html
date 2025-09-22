@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} - OSS vs Commercial AI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="single-slide-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <div class="nav-controls">
+                <a href="{{PREV_SLIDE}}" class="nav-btn" {{PREV_DISABLED}}><i class="fas fa-chevron-left"></i></a>
+                <span class="slide-counter">{{SLIDE_NUMBER}} / 20</span>
+                <a href="{{NEXT_SLIDE}}" class="nav-btn" {{NEXT_DISABLED}}><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="nav-menu">
+                <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i></button>
+                <div id="slideMenu" class="slide-menu">
+                    <a href="slide-00.html" class="menu-item">封面</a>
+                    <a href="slide-01.html" class="menu-item">研究背景</a>
+                    <a href="slide-02.html" class="menu-item">工具概述</a>
+                    <a href="slide-03.html" class="menu-item">Windsurf 介紹</a>
+                    <a href="slide-04.html" class="menu-item">Roo-code 介紹</a>
+                    <a href="slide-05.html" class="menu-item">技術分析</a>
+                    <a href="slide-06.html" class="menu-item">功能比較</a>
+                    <a href="slide-07.html" class="menu-item">效能評估</a>
+                    <a href="slide-08.html" class="menu-item">技術架構差異</a>
+                    <a href="slide-09.html" class="menu-item">成本分析</a>
+                    <a href="slide-10.html" class="menu-item">直接成本</a>
+                    <a href="slide-11.html" class="menu-item">間接成本</a>
+                    <a href="slide-12.html" class="menu-item">TCO 比較</a>
+                    <a href="slide-13.html" class="menu-item">使用情境分析</a>
+                    <a href="slide-14.html" class="menu-item">優缺點比較</a>
+                    <a href="slide-15.html" class="menu-item">決策建議框架</a>
+                    <a href="slide-16.html" class="menu-item">評估維度</a>
+                    <a href="slide-17.html" class="menu-item">決策流程</a>
+                    <a href="slide-18.html" class="menu-item">結論與建議</a>
+                    <a href="slide-19.html" class="menu-item">Q&A</a>
+                    <a href="index.html" class="menu-item special">回到主頁</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Single Slide Content -->
+        <div class="slide-wrapper">
+            <div class="slide active">
+                <div class="slide-content">
+                    {{SLIDE_CONTENT}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {{PROGRESS}}%"></div>
+        </div>
+    </div>
+
+    <script src="single-slide.js"></script>
+</body>
+</html>

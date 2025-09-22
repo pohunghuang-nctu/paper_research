@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>效能評估 - OSS vs Commercial AI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="single-slide-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <div class="nav-controls">
+                <a href="slide-06.html" class="nav-btn"><i class="fas fa-chevron-left"></i></a>
+                <span class="slide-counter">8 / 20</span>
+                <a href="slide-08.html" class="nav-btn"><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="nav-menu">
+                <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i></button>
+                <div id="slideMenu" class="slide-menu">
+                    <a href="slide-00.html" class="menu-item">封面</a>
+                    <a href="slide-01.html" class="menu-item">研究背景</a>
+                    <a href="slide-02.html" class="menu-item">工具概述</a>
+                    <a href="slide-03.html" class="menu-item">Windsurf 介紹</a>
+                    <a href="slide-04.html" class="menu-item">Roo-code 介紹</a>
+                    <a href="slide-05.html" class="menu-item">技術分析</a>
+                    <a href="slide-06.html" class="menu-item">功能比較</a>
+                    <a href="slide-07.html" class="menu-item active">效能評估</a>
+                    <a href="slide-08.html" class="menu-item">技術架構差異</a>
+                    <a href="slide-09.html" class="menu-item">成本分析</a>
+                    <a href="index.html" class="menu-item special">回到主頁</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Single Slide Content -->
+        <div class="slide-wrapper">
+            <div class="slide active">
+                <div class="slide-content">
+
+                    <h2 class="slide-title">效能評估</h2>
+                    <div class="performance-grid">
+                        <div class="performance-card">
+                            <h3>回應速度</h3>
+                            <div class="metric-container">
+                                <div class="metric">
+                                    <span class="tool-name windsurf">Windsurf</span>
+                                    <span class="metric-value">~2.3s</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="tool-name roocode">Roo-code</span>
+                                    <span class="metric-value">~3.1s*</span>
+                                </div>
+                                <p class="metric-note">*依使用的 AI 模型而定</p>
+                            </div>
+                        </div>
+                        <div class="performance-card">
+                            <h3>準確度</h3>
+                            <div class="metric-container">
+                                <div class="metric">
+                                    <span class="tool-name windsurf">Windsurf</span>
+                                    <span class="metric-value">87%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="tool-name roocode">Roo-code</span>
+                                    <span class="metric-value">83%*</span>
+                                </div>
+                                <p class="metric-note">*基於 GPT-4 模型測試</p>
+                            </div>
+                        </div>
+                        <div class="performance-card">
+                            <h3>資源消耗</h3>
+                            <div class="metric-container">
+                                <div class="metric">
+                                    <span class="tool-name windsurf">Windsurf</span>
+                                    <span class="metric-value">~400MB</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="tool-name roocode">Roo-code</span>
+                                    <span class="metric-value">~150MB</span>
+                                </div>
+                                <p class="metric-note">記憶體使用量</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 40%"></div>
+        </div>
+    </div>
+
+    <script src="single-slide.js"></script>
+</body>
+</html>

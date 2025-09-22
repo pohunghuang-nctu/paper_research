@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技術架構差異 - OSS vs Commercial AI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="single-slide-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <div class="nav-controls">
+                <a href="slide-07.html" class="nav-btn"><i class="fas fa-chevron-left"></i></a>
+                <span class="slide-counter">9 / 20</span>
+                <a href="slide-09.html" class="nav-btn"><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="nav-menu">
+                <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i></button>
+                <div id="slideMenu" class="slide-menu">
+                    <a href="slide-00.html" class="menu-item">封面</a>
+                    <a href="slide-01.html" class="menu-item">研究背景</a>
+                    <a href="slide-02.html" class="menu-item">工具概述</a>
+                    <a href="slide-03.html" class="menu-item">Windsurf 介紹</a>
+                    <a href="slide-04.html" class="menu-item">Roo-code 介紹</a>
+                    <a href="slide-05.html" class="menu-item">技術分析</a>
+                    <a href="slide-06.html" class="menu-item">功能比較</a>
+                    <a href="slide-07.html" class="menu-item">效能評估</a>
+                    <a href="slide-08.html" class="menu-item active">技術架構差異</a>
+                    <a href="slide-09.html" class="menu-item">成本分析</a>
+                    <a href="index.html" class="menu-item special">回到主頁</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Single Slide Content -->
+        <div class="slide-wrapper">
+            <div class="slide active">
+                <div class="slide-content">
+
+                    <h2 class="slide-title">技術架構差異</h2>
+                    <div class="architecture-comparison">
+                        <div class="arch-column">
+                            <h3 class="arch-title windsurf">Windsurf 架構</h3>
+                            <div class="arch-diagram">
+                                <div class="arch-layer">
+                                    <div class="layer-box windsurf">Windsurf IDE</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box windsurf">Cascade AI Engine</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box windsurf">雲端 AI 模型</div>
+                                </div>
+                            </div>
+                            <div class="arch-features">
+                                <ul>
+                                    <li>整合式解決方案</li>
+                                    <li>雲端運算</li>
+                                    <li>統一使用者體驗</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="arch-column">
+                            <h3 class="arch-title roocode">Roo-code 架構</h3>
+                            <div class="arch-diagram">
+                                <div class="arch-layer">
+                                    <div class="layer-box roocode">VS Code + Extension</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box roocode">Roo-code Agent</div>
+                                </div>
+                                <div class="arch-arrow">↓</div>
+                                <div class="arch-layer">
+                                    <div class="layer-box roocode">可選 AI 模型</div>
+                                </div>
+                            </div>
+                            <div class="arch-features">
+                                <ul>
+                                    <li>模組化設計</li>
+                                    <li>本地/雲端彈性</li>
+                                    <li>高度可客製化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 45%"></div>
+        </div>
+    </div>
+
+    <script src="single-slide.js"></script>
+</body>
+</html>

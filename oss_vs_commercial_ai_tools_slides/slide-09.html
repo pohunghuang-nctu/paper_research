@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成本分析 - OSS vs Commercial AI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="single-slide-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <div class="nav-controls">
+                <a href="slide-08.html" class="nav-btn"><i class="fas fa-chevron-left"></i></a>
+                <span class="slide-counter">10 / 20</span>
+                <a href="slide-10.html" class="nav-btn"><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="nav-menu">
+                <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i></button>
+                <div id="slideMenu" class="slide-menu">
+                    <a href="slide-00.html" class="menu-item">封面</a>
+                    <a href="slide-01.html" class="menu-item">研究背景</a>
+                    <a href="slide-02.html" class="menu-item">工具概述</a>
+                    <a href="slide-03.html" class="menu-item">Windsurf 介紹</a>
+                    <a href="slide-04.html" class="menu-item">Roo-code 介紹</a>
+                    <a href="slide-05.html" class="menu-item">技術分析</a>
+                    <a href="slide-06.html" class="menu-item">功能比較</a>
+                    <a href="slide-07.html" class="menu-item">效能評估</a>
+                    <a href="slide-08.html" class="menu-item">技術架構差異</a>
+                    <a href="slide-09.html" class="menu-item active">成本分析</a>
+                    <a href="index.html" class="menu-item special">回到主頁</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Single Slide Content -->
+        <div class="slide-wrapper">
+            <div class="slide active">
+                <div class="slide-content">
+
+                    <h2 class="slide-title">成本分析</h2>
+                    <div class="cost-overview">
+                        <div class="cost-category">
+                            <h3>Windsurf Enterprise vs Roo-code + Claude API</h3>
+                            <div class="cost-comparison">
+                                <div class="cost-item windsurf">
+                                    <h4><i class="fas fa-wind"></i> Windsurf Enterprise</h4>
+                                    <div class="cost-details">
+                                        <div class="cost-tier">
+                                            <strong>$60+/用戶/月</strong>
+                                            <div class="tier-details">
+                                                <div class="feature">✓ 1000 prompt credits/月</div>
+                                                <div class="feature">✓ 額外 credits: $40/1000</div>
+                                                <div class="feature">✓ 完整技術支援</div>
+                                                <div class="feature">✓ SSO & RBAC</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cost-item roocode">
+                                    <h4><i class="fas fa-code"></i> Roo-code + Claude API</h4>
+                                    <div class="cost-details">
+                                        <div class="cost-tier">
+                                            <strong>軟體: $0</strong>
+                                            <div class="tier-details">
+                                                <div class="feature">✓ 開源免費</div>
+                                                <div class="feature">✗ 需自行維護</div>
+                                                <div class="feature">✗ 無技術支援</div>
+                                                <div class="feature">+ Claude API 成本</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-category">
+                            <h3>Token 使用量與成本計算</h3>
+                            <div class="token-analysis">
+                                <div class="token-comparison">
+                                    <div class="token-item">
+                                        <h4>Windsurf Enterprise Credits 分析</h4>
+                                        <div class="calculation">
+                                            <div class="calc-row">
+                                                <span>每月 credits:</span>
+                                                <span>1000 credits</span>
+                                            </div>
+                                            <div class="calc-row">
+                                                <span>每 credit 價值:</span>
+                                                <span>$0.04</span>
+                                            </div>
+                                            <div class="calc-row">
+                                                <span>Claude Sonnet 4 定價:</span>
+                                                <span>90/450 credits/M tokens</span>
+                                            </div>
+                                            <div class="calc-row highlight">
+                                                <span>可用 tokens (假設 3:1 input/output):</span>
+                                                <span>~3.7M input + 1.2M output</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="token-item">
+                                        <h4>直接購買 Claude API</h4>
+                                        <div class="calculation">
+                                            <div class="calc-row">
+                                                <span>Input tokens:</span>
+                                                <span>$3.00/M tokens</span>
+                                            </div>
+                                            <div class="calc-row">
+                                                <span>Output tokens:</span>
+                                                <span>$15.00/M tokens</span>
+                                            </div>
+                                            <div class="calc-row">
+                                                <span>相同使用量成本:</span>
+                                                <span>3.7M×$3 + 1.2M×$15</span>
+                                            </div>
+                                            <div class="calc-row highlight">
+                                                <span>總計:</span>
+                                                <span>$29.1/月</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-comparison-row">
+                            <div class="cost-category cost-comparison-left">
+                                <h3>總成本比較 (每用戶/月)</h3>
+                                <div class="total-cost-comparison">
+                                    <div class="cost-bar-chart">
+                                        <div class="cost-bar windsurf-bar">
+                                            <div class="bar-label">Windsurf Enterprise</div>
+                                            <div class="bar-fill" style="width: 100%">
+                                                <span class="bar-value">$60+</span>
+                                            </div>
+                                        </div>
+                                        <div class="cost-bar roocode-bar">
+                                            <div class="bar-label">Roo-code + Claude API</div>
+                                            <div class="bar-fill" style="width: 48.5%">
+                                                <span class="bar-value">$29.1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cost-savings">
+                                        <div class="savings-highlight">
+                                            <i class="fas fa-piggy-bank"></i>
+                                            <span>潛在節省: <strong>~$31/用戶/月 (51%)</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cost-category cost-comparison-right">
+                                <h3>隱藏成本考量</h3>
+                                <div class="hidden-costs">
+                                    <div class="cost-factor">
+                                        <h4><i class="fas fa-tools"></i> Roo-code 額外成本</h4>
+                                        <ul>
+                                            <li>部署與維護人力成本</li>
+                                            <li>系統監控與故障排除</li>
+                                            <li>安全性更新與補丁</li>
+                                            <li>客製化開發時間</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cost-factor">
+                                        <h4><i class="fas fa-shield-alt"></i> Windsurf 包含服務</h4>
+                                        <ul>
+                                            <li>24/7 技術支援</li>
+                                            <li>自動更新與維護</li>
+                                            <li>企業級安全保障</li>
+                                            <li>SLA 服務保證</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-category data-sources">
+                            <h3><i class="fas fa-database"></i> 數據來源</h3>
+                            <div class="source-info">
+                                <div class="source-item">
+                                    <h4><i class="fas fa-link"></i> Windsurf 官方定價</h4>
+                                    <div class="source-details">
+                                        <p><strong>來源：</strong><a href="https://docs.windsurf.com/windsurf/models" target="_blank">Windsurf 官方文檔 - API Pricing</a></p>
+                                        <div class="source-quotes">
+                                            <div class="quote">
+                                                <i class="fas fa-quote-left"></i>
+                                                <span>"We charge the model's API price plus a 20% margin. Each credit corresponds to $0.04."</span>
+                                            </div>
+                                            <div class="pricing-table">
+                                                <div class="table-header">Claude Sonnet 4 定價表</div>
+                                                <div class="table-row">
+                                                    <span>Input Tokens:</span>
+                                                    <span>90 credits/million tokens</span>
+                                                </div>
+                                                <div class="table-row">
+                                                    <span>Output Tokens:</span>
+                                                    <span>450 credits/million tokens</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="source-item">
+                                    <h4><i class="fas fa-link"></i> Claude API 官方定價</h4>
+                                    <div class="source-details">
+                                        <p><strong>來源：</strong><a href="https://www.anthropic.com/pricing" target="_blank">Anthropic Claude 3.5 Sonnet 定價</a></p>
+                                        <div class="source-quotes">
+                                            <div class="pricing-table">
+                                                <div class="table-header">Claude 3.5 Sonnet API 定價</div>
+                                                <div class="table-row">
+                                                    <span>Input Tokens:</span>
+                                                    <span>$3.00/million tokens</span>
+                                                </div>
+                                                <div class="table-row">
+                                                    <span>Output Tokens:</span>
+                                                    <span>$15.00/million tokens</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 50%"></div>
+        </div>
+    </div>
+
+    <script src="single-slide.js"></script>
+</body>
+</html>
