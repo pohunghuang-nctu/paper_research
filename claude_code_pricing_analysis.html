@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code 定價分析報告</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .important {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .summary {
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claude Code 定價分析報告</h1>
+        
+        <h2>研究背景</h2>
+        <p>本報告針對 Claude Code 的定價機制進行深入分析，特別關注 prompt caching 功能中的 cache read 和 cache write 收費問題，以及不同服務路徑下的計價差異。</p>
+
+        <h2>核心發現</h2>
+
+        <h3>1. Prompt Caching 收費確認</h3>
+        <div class="important">
+            <strong>重要結論：</strong>快取讀取（cache read）和快取寫入（cache write）都會被收費，且會包含在總成本（Total Cost）中。
+        </div>
+
+        <h4>Anthropic 直接 API 計價結構：</h4>
+        <table>
+            <tr>
+                <th>項目</th>
+                <th>計價倍數</th>
+                <th>說明</th>
+            </tr>
+            <tr>
+                <td>Cache Write (5分鐘)</td>
+                <td>1.25x</td>
+                <td>基礎 input token 價格的 1.25 倍</td>
+            </tr>
+            <tr>
+                <td>Cache Write (1小時)</td>
+                <td>2x</td>
+                <td>基礎 input token 價格的 2 倍</td>
+            </tr>
+            <tr>
+                <td>Cache Read</td>
+                <td>0.1x</td>
+                <td>基礎 input token 價格的 0.1 倍（90% 折扣）</td>
+            </tr>
+        </table>
+
+        <h3>2. 快取儲存位置</h3>
+        <div class="highlight">
+            <p><strong>快取儲存在 Anthropic 的伺服器端</strong>，不是本地儲存。特性包括：</p>
+            <ul>
+                <li>組織隔離：不同組織間的快取完全隔離</li>
+                <li>精確匹配：需要 100% 相同的 prompt 片段才能命中</li>
+                <li>生存時間：預設 5 分鐘，可選 1 小時</li>
+            </ul>
+        </div>
+
+        <h3>3. 不同服務路徑的計價差異</h3>
+
+        <h4>架構 A：Claude Code → Anthropic API 直接</h4>
+        <div class="code">
+            使用 Anthropic 官方計價規則：
+            - Cache write: 1.25x (5分鐘) 或 2x (1小時)
+            - Cache read: 0.1x
+            - 標準 input/output tokens
+        </div>
+
+        <h4>架構 B：Claude Code → AWS Gateway → AWS Bedrock → Anthropic</h4>
+        <div class="code">
+            使用 AWS Bedrock 計價規則：
+            - Cache read: 高達 90% 折扣
+            - Cache write: 可能高於標準費率
+            - 標準 input/output tokens
+        </div>
+
+        <div class="warning">
+            <strong>關鍵差異：</strong>AWS Bedrock 使用彈性折扣制度，而非 Anthropic 直接 API 的固定倍數制度。
+        </div>
+
+        <h3>4. 官方文件參考</h3>
+        <ul>
+            <li><strong>Anthropic 官方文件：</strong> <a href="https://docs.claude.com/en/docs/about-claude/pricing">Claude Pricing Documentation</a></li>
+            <li><strong>AWS Bedrock 官方文件：</strong> <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html">Prompt caching for faster model inference</a></li>
+            <li><strong>AWS Bedrock 定價：</strong> <a href="https://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a></li>
+        </ul>
+
+        <h3>5. Total Cost 計算邏輯</h3>
+        <div class="important">
+            <p>無論使用哪種架構，Claude Code 顯示的 "Total Cost" 都會包含：</p>
+            <ul>
+                <li>Input tokens 費用</li>
+                <li>Output tokens 費用</li>
+                <li>Cache read tokens 費用</li>
+                <li>Cache write tokens 費用</li>
+            </ul>
+            <p>最終顯示的總成本會根據對應的服務路徑計價規則進行計算。</p>
+        </div>
+
+        <div class="summary">
+            <h2>總結</h2>
+            <p>由於計費規則複雜且不確定，所以我們最終比較基準應該以顯示的 Total Cost 為準。</p>
+        </div>
+
+        <hr>
+        <p><em>報告生成時間：2025年9月30日</em></p>
+    </div>
+</body>
+</html>
