@@ -1,0 +1,236 @@
+---
+# Namespace (可選，根據需求決定是否使用獨立的 namespace)
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mitmproxy
+
+---
+# ConfigMap: 存放 mitmproxy 自訂腳本
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mitmproxy-script
+  namespace: mitmproxy
+data:
+  addon.py: |
+    from mitmproxy import http
+    from mitmproxy import ctx
+
+    def response(flow: http.HTTPFlow) -> None:
+        """
+        處理 HTTP 回應
+        記得在處理完畢後釋放記憶體
+        """
+        # 在這裡進行你的處理邏輯
+        # 例如：記錄、修改、分析等
+        
+        # 記錄請求資訊
+        ctx.log.info(f"Request: {flow.request.method} {flow.request.pretty_url}")
+        ctx.log.info(f"Response: {flow.response.status_code}")
+        
+        # 重要：處理完畢後釋放記憶體
+        flow.live = False
+
+    def request(flow: http.HTTPFlow) -> None:
+        """
+        處理 HTTP 請求
+        """
+        # 可以在這裡對請求進行處理
+        pass
+
+---
+# PersistentVolumeClaim: 用於持久化 mitmproxy 證書和日誌
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mitmproxy-data
+  namespace: mitmproxy
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  # 根據你的 K8S 環境選擇適當的 storageClassName
+  # storageClassName: standard
+
+---
+# Deployment: mitmproxy 主要部署配置
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mitmproxy
+  namespace: mitmproxy
+  labels:
+    app: mitmproxy
+spec:
+  replicas: 1  # mitmproxy 通常只需要單一實例
+  selector:
+    matchLabels:
+      app: mitmproxy
+  template:
+    metadata:
+      labels:
+        app: mitmproxy
+    spec:
+      containers:
+      - name: mitmproxy
+        # 使用官方的 mitmproxy Docker 映像
+        image: mitmproxy/mitmproxy:latest
+        # 也可以指定特定版本，例如: mitmproxy/mitmproxy:10.1.5
+        
+        # 啟動命令：使用 mitmdump 模式並載入自訂腳本
+        command: ["mitmdump"]
+        args:
+          - "-s"
+          - "/scripts/addon.py"
+          - "--set"
+          - "flow_detail=0"
+          - "--set"
+          - "stream_large_bodies=1m"  # 大於 1MB 的內容串流到磁碟
+          - "--listen-host"
+          - "0.0.0.0"
+          - "--listen-port"
+          - "8080"
+          # 如果需要啟用 web interface，可以加上以下參數
+          # - "--web-host"
+          # - "0.0.0.0"
+          # - "--web-port"
+          # - "8081"
+        
+        ports:
+        - name: proxy
+          containerPort: 8080
+          protocol: TCP
+        # 如果啟用了 web interface
+        # - name: web
+        #   containerPort: 8081
+        #   protocol: TCP
+        
+        # 資源限制
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        
+        # 健康檢查
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 3
+        
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+        
+        # 掛載點
+        volumeMounts:
+        - name: mitmproxy-script
+          mountPath: /scripts
+          readOnly: true
+        - name: mitmproxy-data
+          mountPath: /home/mitmproxy/.mitmproxy  # 存放證書
+        - name: mitmproxy-data
+          mountPath: /logs
+          subPath: logs  # 如果需要存放日誌
+        
+        # 環境變數 (可選)
+        env:
+        - name: TZ
+          value: "Asia/Taipei"
+        
+      # Volume 定義
+      volumes:
+      - name: mitmproxy-script
+        configMap:
+          name: mitmproxy-script
+      - name: mitmproxy-data
+        persistentVolumeClaim:
+          claimName: mitmproxy-data
+      
+      # 安全性設定 (可選，根據需求調整)
+      # securityContext:
+      #   runAsNonRoot: true
+      #   runAsUser: 1000
+      #   fsGroup: 1000
+
+---
+# Service: 暴露 mitmproxy 服務
+apiVersion: v1
+kind: Service
+metadata:
+  name: mitmproxy
+  namespace: mitmproxy
+  labels:
+    app: mitmproxy
+spec:
+  type: ClusterIP  # 可改為 LoadBalancer 或 NodePort，根據需求
+  selector:
+    app: mitmproxy
+  ports:
+  - name: proxy
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  # 如果啟用了 web interface
+  # - name: web
+  #   protocol: TCP
+  #   port: 8081
+  #   targetPort: 8081
+
+---
+# Service (NodePort 範例): 如果需要從叢集外部直接存取
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: mitmproxy-nodeport
+#   namespace: mitmproxy
+# spec:
+#   type: NodePort
+#   selector:
+#     app: mitmproxy
+#   ports:
+#   - name: proxy
+#     protocol: TCP
+#     port: 8080
+#     targetPort: 8080
+#     nodePort: 30080  # 可選，不指定則自動分配
+
+---
+# HorizontalPodAutoscaler (可選): 根據 CPU/Memory 自動擴展
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: mitmproxy-hpa
+#   namespace: mitmproxy
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: mitmproxy
+#   minReplicas: 1
+#   maxReplicas: 3
+#   metrics:
+#   - type: Resource
+#     resource:
+#       name: cpu
+#       target:
+#         type: Utilization
+#         averageUtilization: 80
+#   - type: Resource
+#     resource:
+#       name: memory
+#       target:
+#         type: Utilization
+#         averageUtilization: 80
