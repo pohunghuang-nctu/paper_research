@@ -4,7 +4,9 @@
 
 - [概述](#概述)
 - [Claude Code 本地儲存結構](#claude-code-本地儲存結構)
+- [Session ID 與 Resume 行為重要發現](#session-id-與-resume-行為重要發現)
 - [Claude API 完整計價表](#claude-api-完整計價表)
+- [AWS Bedrock 定價](#aws-bedrock-定價)
 - [Token 類型說明](#token-類型說明)
 - [計算公式](#計算公式)
 - [實作建議](#實作建議)
@@ -45,6 +47,89 @@ Claude Code 會在本地儲存完整的對話歷史，包含每則訊息的詳�
 
 - `~/.claude/settings` - 官方有文件說明的設定檔
 - `~/.claude/projects/` - 未在官方文件中詳細說明，但包含所有 session 歷史
+
+## Session ID 與 Resume 行為重要發現
+
+### ⚠️ 已知 Bug: Resume 會創建新 Session
+
+**重要**：根據 [GitHub Issue #4926](https://github.com/anthropics/claude-code/issues/4926)，Claude Code CLI 的 `--resume` 功能目前存在 bug。
+
+#### 預期行為 vs 實際行為
+
+| 操作 | 預期行為 | 實際行為 (Bug) |
+|------|---------|---------------|
+| `claude --resume <session-id>` | 繼續使用原 session ID | ❌ **創建新的 session ID** |
+| `claude -c` (continue) | 繼續最近的 session | ❌ **創建新的 session ID** |
+| 檔案結構 | 寫入原有 JSONL 檔案 | ❌ **創建新的 JSONL 檔案** |
+
+#### Bug 重現範例
+
+```bash
+# 1. 創建初始 session
+$ claude --session-id abc123 -p "what is 4 + 4 * 4?"
+# 產生: abc123.jsonl
+
+# 2. Resume 該 session
+$ claude --resume abc123 -p "remove 10 from it"
+# 產生: xyz789.jsonl  ← 新的 session ID!
+
+# 3. 再次 resume 原始 session
+$ claude --resume abc123 -p "add 20 to it"
+# 產生: def456.jsonl  ← 又是新的!
+
+# 結果：三個不同的 JSONL 檔案，而非一個
+```
+
+#### 對成本計算的影響
+
+❌ **不能假設**：
+- 一個邏輯對話 = 一個 session ID
+- Resume 會繼續寫入原有檔案
+
+✅ **實際情況**：
+- 一個邏輯對話可能分散在**多個 session JSONL 檔案**中
+- 每次 resume 都會產生新的 session ID
+- 需要追蹤對話鏈或使用時間範圍來計算總成本
+
+#### Fork vs Continue 的設計
+
+根據 [SDK 文件](https://docs.claude.com/en/api/agent-sdk/sessions)，SDK 支援兩種模式：
+
+```javascript
+// Continue (預設) - 應該繼續原 session
+query({
+  resume: sessionId,
+  forkSession: false  // 預設值
+})
+
+// Fork - 創建新 session 分支
+query({
+  resume: sessionId,
+  forkSession: true
+})
+```
+
+**但 CLI 的 `--resume` 目前表現得像 `forkSession: true`**，即使預設應該是 `false`。
+
+#### 解決方案建議
+
+在此 bug 修復前，計算成本時可以：
+
+1. **使用時間範圍**而非 session ID
+   ```bash
+   # 計算今天所有對話的成本
+   python claude_session_cost.py --date 2025-10-14
+   ```
+
+2. **手動群組相關 sessions**
+   ```bash
+   # 計算多個相關 session 的總成本
+   python claude_session_cost.py abc123.jsonl xyz789.jsonl def456.jsonl
+   ```
+
+3. **追蹤對話鏈**（進階）
+   - 解析 JSONL 檔案中的 `resumed_from` 欄位（如果存在）
+   - 重建完整的對話樹狀結構
 
 ## Claude API 完整計價表
 
@@ -92,6 +177,61 @@ Prompt Caching 提供兩種 TTL (Time To Live) 選項：
 - **特殊計價**: 基礎價格會有額外加成
 - **折扣可疊加**: Batch API 與 Prompt Caching 折扣可應用於長文本
 
+## AWS Bedrock 定價
+
+如果透過 AWS Bedrock 使用 Claude（例如企業內部部署），定價結構略有不同。
+
+### AWS Bedrock 定價表（全球跨區域推論）
+
+#### 標準 Context (≤200K tokens)
+
+| 模型 | Input (per 1K) | Output (per 1K) | Cache Write (per 1K) | Cache Read (per 1K) | Batch Input | Batch Output |
+|------|---------------|----------------|---------------------|-------------------|-------------|-------------|
+| **Claude Sonnet 4.5** | $0.003 | $0.015 | $0.00375 | $0.0003 | 不支援 | 不支援 |
+| **Claude Sonnet 4** | $0.003 | $0.015 | $0.00375 | $0.0003 | $0.0015 | $0.0075 |
+
+#### 長上下文 (Long Context, >200K tokens)
+
+| 模型 | Input (per 1K) | Output (per 1K) | Cache Write (per 1K) | Cache Read (per 1K) |
+|------|---------------|----------------|---------------------|-------------------|
+| **Sonnet 4.5 - 長上下文** | $0.006 | $0.0225 | $0.0075 | $0.0006 |
+| **Sonnet 4 - 長上下文** | $0.006 | $0.0225 | $0.0075 | $0.0006 |
+
+### AWS Bedrock Token 類型對照
+
+| JSONL 欄位 | AWS Bedrock 顯示名稱 | Sonnet 4.5 | Sonnet 4 |
+|-----------|-------------------|-----------|----------|
+| `input_tokens` | 每 1,000 個輸入字符的定價 | $0.003 | $0.003 |
+| `output_tokens` | 每 1,000 個輸出字符的定價 | $0.015 | $0.015 |
+| `cache_creation_input_tokens` | 每 1,000 個輸入字符的定價 **(快取寫入)** | $0.00375 | $0.00375 |
+| `cache_read_input_tokens` | 每 1,000 個輸入字符的定價 **(快取讀取)** | $0.0003 | $0.0003 |
+
+### 驗證計算
+
+**Cache Write 倍數驗證**：
+```
+基礎 input: $0.003 / 1000 tokens
+Cache write: $0.00375 / 1000 tokens
+比例: 0.00375 ÷ 0.003 = 1.25 ✓ (符合 Anthropic 官方規則)
+```
+
+**Cache Read 倍數驗證**：
+```
+基礎 input: $0.003 / 1000 tokens
+Cache read: $0.0003 / 1000 tokens
+比例: 0.0003 ÷ 0.003 = 0.1 ✓ (節省 90%)
+```
+
+### AWS vs Anthropic API 差異
+
+| 項目 | Anthropic API | AWS Bedrock |
+|------|--------------|-------------|
+| **計價單位** | Per **million** tokens | Per **1000** tokens |
+| **Batch 支援** | 多數模型支援 | 僅 Sonnet 4 支援 |
+| **長上下文** | 自動觸發 (>200K) | 需明確選擇「長上下文」版本 |
+| **區域定價** | 全球統一 | 可能有區域差異 |
+| **帳單整合** | Anthropic Console | AWS 帳單系統 |
+
 ## Token 類型說明
 
 ### 1. `input_tokens`
@@ -116,20 +256,26 @@ Prompt Caching 提供兩種 TTL (Time To Live) 選項：
 ### 3. `cache_creation_input_tokens`
 
 - **定義**: 建立 prompt cache 時寫入的 tokens
+- **AWS Bedrock 對應**: 「每 1,000 個輸入字符的定價 (快取寫入)」
 - **使用時機**:
   - 第一次使用某個 prompt 模板
   - Cache 過期後重新建立
   - 頻繁重複使用的 context（如文件、程式碼庫）
-- **計價**: 基礎 input 價格 × 1.25（5-min）或 × 2.0（1-hour）
+- **計價**: 
+  - Anthropic API: 基礎 input 價格 × 1.25（5-min）或 × 2.0（1-hour）
+  - AWS Bedrock: $0.00375 / 1K tokens (Sonnet 4/4.5)
 - **投資回報**: 如果 cache 被重複讀取，整體成本會降低
 
 ### 4. `cache_read_input_tokens`
 
 - **定義**: 從已建立的 cache 讀取的 tokens
+- **AWS Bedrock 對應**: 「每 1,000 個輸入字符的定價 (快取讀取)」
 - **使用時機**: 
   - 在 cache TTL 期間重複使用相同的 context
   - 多輪對話中的固定 system message
-- **計價**: 基礎 input 價格 × 0.1（節省 90%）
+- **計價**: 
+  - Anthropic API: 基礎 input 價格 × 0.1（節省 90%）
+  - AWS Bedrock: $0.0003 / 1K tokens (Sonnet 4/4.5)
 - **效益**: 大幅降低重複 context 的成本
 
 ## 計算公式
@@ -233,9 +379,10 @@ def calculate_session_cost(jsonl_file_path: str) -> dict:
 
 ### 模型價格映射
 
+#### Anthropic API 定價（per million tokens）
+
 ```python
-# Claude API 模型價格表（per million tokens）
-MODEL_PRICING = {
+MODEL_PRICING_ANTHROPIC = {
     'claude-opus-4-1-20250805': {'input': 15.00, 'output': 75.00},
     'claude-opus-4-20250514': {'input': 15.00, 'output': 75.00},
     'claude-sonnet-4-5-20250929': {'input': 3.00, 'output': 15.00},
@@ -244,8 +391,45 @@ MODEL_PRICING = {
     'claude-3-5-haiku-20241022': {'input': 0.80, 'output': 4.00},
     'claude-3-haiku-20240307': {'input': 0.25, 'output': 1.25},
 }
+```
 
-# 簡化版模型名稱對應（如果 JSONL 中使用簡化名稱）
+#### AWS Bedrock 定價（per 1000 tokens）
+
+```python
+MODEL_PRICING_AWS_BEDROCK = {
+    'claude-sonnet-4-5': {
+        'input': 0.003,
+        'output': 0.015,
+        'cache_write': 0.00375,
+        'cache_read': 0.0003,
+    },
+    'claude-sonnet-4': {
+        'input': 0.003,
+        'output': 0.015,
+        'cache_write': 0.00375,
+        'cache_read': 0.0003,
+        'batch_input': 0.0015,
+        'batch_output': 0.0075,
+    },
+    # 長上下文版本
+    'claude-sonnet-4-5-long': {
+        'input': 0.006,
+        'output': 0.0225,
+        'cache_write': 0.0075,
+        'cache_read': 0.0006,
+    },
+    'claude-sonnet-4-long': {
+        'input': 0.006,
+        'output': 0.0225,
+        'cache_write': 0.0075,
+        'cache_read': 0.0006,
+    },
+}
+```
+
+#### 通用模型名稱對應
+
+```python
 MODEL_NAME_MAPPING = {
     'opus-4.1': 'claude-opus-4-1-20250805',
     'opus-4': 'claude-opus-4-20250514',
@@ -255,6 +439,49 @@ MODEL_NAME_MAPPING = {
     'haiku-3.5': 'claude-3-5-haiku-20241022',
     'haiku-3': 'claude-3-haiku-20240307',
 }
+```
+
+### AWS Bedrock 成本計算
+
+```python
+def calculate_cost_aws_bedrock(
+    usage: dict,
+    model: str = 'claude-sonnet-4',
+    is_long_context: bool = False
+) -> float:
+    """
+    計算 AWS Bedrock 上的 Claude 使用成本
+    
+    Args:
+        usage: 包含 token 使用量的字典
+        model: 模型名稱
+        is_long_context: 是否使用長上下文版本
+    
+    Returns:
+        成本（美元）
+    """
+    # 選擇定價
+    model_key = f"{model}-long" if is_long_context else model
+    pricing = MODEL_PRICING_AWS_BEDROCK.get(model_key)
+    
+    if not pricing:
+        raise ValueError(f"Unknown model: {model_key}")
+    
+    # 取得 token 數量
+    input_tokens = usage.get('input_tokens', 0)
+    output_tokens = usage.get('output_tokens', 0)
+    cache_creation = usage.get('cache_creation_input_tokens', 0)
+    cache_read = usage.get('cache_read_input_tokens', 0)
+    
+    # 計算成本（AWS 價格已是 per 1000 tokens）
+    cost = (
+        input_tokens * pricing['input'] / 1000 +
+        output_tokens * pricing['output'] / 1000 +
+        cache_creation * pricing['cache_write'] / 1000 +
+        cache_read * pricing['cache_read'] / 1000
+    )
+    
+    return cost
 ```
 
 ## 實作建議
@@ -390,12 +617,17 @@ python claude_session_cost.py --scan-all --from 2025-01-01 --to 2025-01-31
 本指南的 Claude Code 本地儲存發現來自社群研究：
 - GitHub Issue: [Feature Request: Access Full Claude Code Conversation History](https://github.com/BeehiveInnovations/zen-mcp-server/issues/155)
 - 儲存位置: `~/.claude/projects/[project-hash]/[session-id].jsonl`
+- Session Resume Bug: [GitHub Issue #4926](https://github.com/anthropics/claude-code/issues/4926)
 
 ---
 
 ## 更新記錄
 
-- **2025-10-14**: 初始版本，包含完整計價表與實作指南
+- **2025-10-14 v2**: 
+  - 新增 AWS Bedrock 定價表與計算公式
+  - 新增 Session ID Resume Bug 的重要發現 (Issue #4926)
+  - 補充 Token 類型的 AWS Bedrock 對應欄位名稱
+- **2025-10-14 v1**: 初始版本，包含 Anthropic API 完整計價表與實作指南
 - 價格資訊基於 2025 年 10 月的資料，請定期檢查官方文件更新
 
 ## 授權
