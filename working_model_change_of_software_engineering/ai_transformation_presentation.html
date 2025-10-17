@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 時代的軟體工程工作模式變革</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            width: 90%;
+            max-width: 1200px;
+            height: 85vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 60px 80px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 2.8em;
+            color: #667eea;
+            margin-bottom: 40px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 2em;
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        ul ul {
+            margin-top: 15px;
+            margin-left: 30px;
+        }
+
+        ul ul li {
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: #546e7a;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: #7f8c8d;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .emphasis {
+            background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .cost-box {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            font-size: 1.3em;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            font-size: 1.2em;
+            color: white;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .key-point {
+            background: #e8f4f8;
+            border-left: 6px solid #00bcd4;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning {
+            background: #fff3e0;
+            border-left: 6px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <div class="center-content">
+                <h1>AI 時代的<br>軟體工程工作模式變革</h1>
+                <p class="subtitle">重新定義團隊協作與組織效能</p>
+                <p class="subtitle" style="margin-top: 40px; font-size: 1.4em; color: #667eea;">2026 年度計畫策略規劃</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: AI Empowerment -->
+        <div class="slide">
+            <h2>AI 賦能：能力的全面提升</h2>
+            <div class="key-point">
+                <h3>核心觀察</h3>
+                <p>善用 AI 的工作者能獲得全方位的能力增強，涵蓋<span class="emphasis">深度、速度與廣度</span>三個維度。</p>
+            </div>
+            <h3>關鍵思考</h3>
+            <p>當部分團隊成員的能力被大幅增強後，<strong>團隊協作模式將面臨根本性的轉變</strong>。</p>
+            <ul>
+                <li><strong>傳統模式：</strong>團隊領導者主要處理人員管理相關議題</li>
+                <li><strong>未來模式：</strong>精通 AI 的團隊成員指揮多個 AI Agent 完成任務</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: New Role Definition -->
+        <div class="slide">
+            <h2>AI 協調者：新時代的核心角色</h2>
+            <h3>基本能力要求</h3>
+            <ul>
+                <li>熟悉並善用 AI 工具與技術</li>
+                <li>具備高效的 AI Agent 協調與管理能力</li>
+            </ul>
+            <div class="key-point" style="margin-top: 40px;">
+                <h3>差異化競爭優勢</h3>
+                <p>為了有效指揮 AI Agent，協調者必須具備 AI 尚未具備的關鍵能力：</p>
+                <ul style="margin-top: 20px;">
+                    <li><strong>專業領域的深度理解與洞察力</strong></li>
+                    <li><strong>開創性思維與框架外思考能力</strong></li>
+                    <li><strong>複雜情境的判斷與決策能力</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: From Data to Action -->
+        <div class="slide">
+            <h2>從數據驅動到行動驅動</h2>
+            <div class="warning">
+                <h3>傳統困境</h3>
+                <p>企業習慣依賴數據驗證新策略，但在 AI 轉型的關鍵時刻，<strong>過度依賴數據反而成為行動障礙</strong>。</p>
+            </div>
+            <h3>現實考量</h3>
+            <ul>
+                <li><strong>可量測指標：</strong>短期內可觀察到個別工作者使用 AI 提升任務執行效率</li>
+                <li><strong>難以量化：</strong>組織層級的長期轉型效益需要實際執行後才能驗證</li>
+            </ul>
+            <div class="key-point" style="margin-top: 30px;">
+                <p style="font-size: 1.5em;"><strong>策略建議：</strong>先讓改變發生，透過實踐累積數據與經驗</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Practical Strategy -->
+        <div class="slide">
+            <h2>務實的轉型策略</h2>
+            <h3>工作輪調機制（Job Rotation）</h3>
+            <ul>
+                <li>讓 AI 使用效率高的員工<strong>承接同事的工作職責</strong></li>
+                <li>運用 AI 工具<strong>同時兼顧原有與新增的工作範疇</strong></li>
+                <li>透過實際執行驗證 AI 輔助下的<strong>工作負載上限</strong></li>
+            </ul>
+            <h3 style="margin-top: 40px;">資源重新配置</h3>
+            <p>AI 投資應當對應於人力成本的優化，形成良性循環：</p>
+            <ul>
+                <li>提高 AI 支出 → 減少對應的人力配置</li>
+                <li>工作職責移轉至執行效率更高的團隊成員</li>
+                <li>形成<strong>技術投資、效率提升、成本優化</strong>的正向循環</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Cost-Benefit Analysis -->
+        <div class="slide">
+            <h2>成本效益分析範例</h2>
+            <div class="cost-box">
+                <p><strong>AI 工具投資：</strong>200 萬元/年</p>
+                <p><strong>人力成本節省：</strong>300 萬元/年（優化 1 個職位）</p>
+                <p><strong>淨效益：</strong>100 萬元</p>
+            </div>
+            <h3>效益分配建議</h3>
+            <ul>
+                <li><strong>50 萬元</strong> → 獎勵承接額外工作的高效能員工</li>
+                <li><strong>50 萬元</strong> → 公司營運成本優化</li>
+            </ul>
+            <div class="key-point" style="margin-top: 40px;">
+                <p style="font-size: 1.4em;">此模式創造<span class="emphasis">員工激勵、組織效能提升、成本優化</span>的三贏局面</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Competitive Landscape -->
+        <div class="slide">
+            <h2>競爭態勢與時間壓力</h2>
+            <div class="warning">
+                <h3>當前困境</h3>
+                <p>競爭對手已經開始執行類似策略，而我們仍在尋找<span class="highlight">可能不存在的完美數據</span>來證明決策合理性。</p>
+            </div>
+            <h3 style="margin-top: 30px;">可預見的風險</h3>
+            <ul>
+                <li><strong>時間劣勢：</strong>競爭對手率先執行並累積經驗與成果</li>
+                <li><strong>被動跟進：</strong>被迫匆忙應對，缺乏充分準備</li>
+                <li><strong>決策困難：</strong>組織調整時難以判斷優化對象與優先順序</li>
+                <li><strong>基礎建設缺口：</strong>缺乏必要的 AI 基礎設施支撐</li>
+            </ul>
+        </div>
+
+        <!-- Slide 8: Infrastructure Needs -->
+        <div class="slide">
+            <h2>AI 基礎建設需求</h2>
+            <div class="key-point">
+                <h3>核心理念</h3>
+                <p><strong>需求驅動供給</strong> — 唯有讓組織與團隊工作模式實際轉變，才能識別真正需要的基礎建設組件。</p>
+            </div>
+            <h3 style="margin-top: 40px;">為何提前規劃效果有限？</h3>
+            <ul>
+                <li>工作模式尚未改變時，難以準確預測需求</li>
+                <li>自上而下的推測往往偏離實際應用場景</li>
+                <li><strong>實踐驅動</strong>比理論規劃更能產生有效解決方案</li>
+            </ul>
+        </div>
+
+        <!-- Slide 9: AOP 2026 Part 1 -->
+        <div class="slide">
+            <h2>2026 年 AI AOP 規劃方向（1/2）</h2>
+            <h3>一、AI 個人助理系統</h3>
+            <div class="key-point">
+                <p><strong>需求背景：</strong>當員工承擔多重任務時，即使 AI 分擔主要工作，仍容易因任務切換（Context Switching）產生疲勞與失誤。</p>
+            </div>
+            <p><strong>解決方案：</strong></p>
+            <ul>
+                <li>開發 <strong>AI 秘書系統</strong>，提供智慧行程管理</li>
+                <li>自動記錄與整理工作內容與成果</li>
+                <li>協助快速檢索歷史報告、文件與資料位置</li>
+                <li>主動提醒重要事項與待辦任務</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10: AOP 2026 Part 2 -->
+        <div class="slide">
+            <h2>2026 年 AI AOP 規劃方向（2/2）</h2>
+            <h3>二、工作協議標準化與集中管理</h3>
+            <div class="key-point">
+                <p><strong>需求背景：</strong>個人負責範疇擴大後（如 Android Codebase 數千個 Repositories），團隊成員間的協作介面必須清晰且標準化。</p>
+            </div>
+            <p><strong>解決方案：</strong></p>
+            <ul>
+                <li>建立<strong>集中式工作協議（Working Protocol）</strong></li>
+                <li>定義人機協作所需的共享資訊規範</li>
+                <li>採用<strong>需求驅動</strong>方式逐步完善協議內容</li>
+            </ul>
+        </div>
+
+        <!-- Slide 11: AOP 2026 Part 3 -->
+        <div class="slide">
+            <h2>2026 年 AI AOP 規劃方向（3/3）</h2>
+            <h3>三、AI 驅動的品質保證系統</h3>
+            <div class="key-point">
+                <p><strong>需求背景：</strong>AI 輔助下，程式碼審查（Code Review）的提交速度加快，應對應提升 AI 自動化審查與問題解決的能力。</p>
+            </div>
+            <p><strong>解決方案：</strong></p>
+            <ul>
+                <li><strong>從源頭強化：</strong>AI 協助 QA 團隊生成測試案例與腳本</li>
+                <li><strong>自動化開單：</strong>AI 主動識別問題並創建 Code Review 單據</li>
+                <li><strong>智慧解單：</strong>AI 自動提出解決方案或修復建議</li>
+                <li><strong>品質提升：</strong>提高 CR 的<span class="emphasis">品質、效率與可行性</span></li>
+            </ul>
+        </div>
+
+        <!-- Slide 12: Conclusion -->
+        <div class="slide">
+            <div class="center-content">
+                <h2 style="border: none; text-align: center; font-size: 3em;">結論</h2>
+                <div class="key-point" style="margin-top: 50px; font-size: 1.3em; max-width: 900px;">
+                    <p style="text-align: center; line-height: 2;">
+                        AI 時代的組織轉型<strong>不是選擇題，而是必答題</strong>。<br><br>
+                        與其等待完美數據，<span class="emphasis">不如立即行動</span>，<br>
+                        在實踐中學習，在變革中成長。<br><br>
+                        <strong>先行者將獲得經驗與競爭優勢，<br>
+                        後進者只能疲於追趕。</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-number">
+        <span id="current-slide">1</span> / <span id="total-slides">12</span>
+    </div>
+
+    <div class="navigation">
+        <button id="prev-btn" onclick="prevSlide()">← 上一頁</button>
+        <button id="next-btn" onclick="nextSlide()">下一頁 →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+            
+            // Update button states
+            document.getElementById('prev-btn').disabled = currentSlide === 0;
+            document.getElementById('next-btn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
