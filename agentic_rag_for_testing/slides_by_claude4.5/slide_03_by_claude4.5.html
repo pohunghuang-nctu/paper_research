@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 3 - 實驗結果對比</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html" class="home-btn">🏠</a>
+    <div class="slide-container">
+        <div class="slide-header">
+            <div class="slide-title">📊 實驗結果對比</div>
+            <div class="slide-subtitle">真實世界 SAP S/4HANA 遷移專案 (25,000 測試案例)</div>
+        </div>
+        
+        <h2>準確度與品質指標</h2>
+        <table>
+            <tr>
+                <th>方法</th>
+                <th>準確度</th>
+                <th>完整性</th>
+                <th>一致性</th>
+                <th>可追溯性</th>
+                <th>總體</th>
+            </tr>
+            <tr>
+                <td>Manual Testing</td>
+                <td>92.3%</td>
+                <td>85.7%</td>
+                <td>78.2%</td>
+                <td>73.6%</td>
+                <td>80.4%</td>
+            </tr>
+            <tr>
+                <td>GPT-4 Direct</td>
+                <td>81.7%</td>
+                <td>79.4%</td>
+                <td>73.6%</td>
+                <td>52.8%</td>
+                <td>71.88%</td>
+            </tr>
+            <tr>
+                <td>SAP TAO</td>
+                <td>84.2%</td>
+                <td>88.5%</td>
+                <td>91.7%</td>
+                <td>78.9%</td>
+                <td>85.83%</td>
+            </tr>
+            <tr class="highlight">
+                <td><strong>Agentic RAG</strong></td>
+                <td><strong>94.8%</strong></td>
+                <td><strong>96.2%</strong></td>
+                <td><strong>95.7%</strong></td>
+                <td><strong>98.1%</strong></td>
+                <td><strong>96.2%</strong></td>
+            </tr>
+        </table>
+        
+        <h2>效率與成本效益</h2>
+        <table>
+            <tr>
+                <th>指標</th>
+                <th>改善幅度</th>
+                <th>具體數據</th>
+            </tr>
+            <tr>
+                <td>測試時程縮短</td>
+                <td class="highlight">85%</td>
+                <td>240小時 → 36小時 (每專案階段)</td>
+            </tr>
+            <tr>
+                <td>成本節省</td>
+                <td class="highlight">35%</td>
+                <td>三個專案總體</td>
+            </tr>
+            <tr>
+                <td>上線加速</td>
+                <td class="highlight">2個月</td>
+                <td>16個月提前交付</td>
+            </tr>
+            <tr>
+                <td>缺陷檢測率</td>
+                <td class="highlight">+35%</td>
+                <td>系統測試階段</td>
+            </tr>
+            <tr>
+                <td>測試覆蓋率</td>
+                <td class="highlight">98.7% vs 84%</td>
+                <td>+14.7% (相比手動基準)</td>
+            </tr>
+            <tr>
+                <td>生產環境缺陷</td>
+                <td class="highlight">-92%</td>
+                <td>部署後回歸問題</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="counter">3 / 9</div>
+    <div class="navigation">
+        <a href="slide_02_by_claude4.5.html" class="nav-btn">◀</a>
+        <a href="slide_04_by_claude4.5.html" class="nav-btn">▶</a>
+    </div>
+</body>
+</html>

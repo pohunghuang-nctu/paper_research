@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蘋果論文《Agentic RAG for Software Testing》簡報</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; }
+    .slider { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+    .slide { position: absolute; top: 0; left: 100%; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; transition: left 0.5s ease-in-out; background-color: #fff; }
+    .slide.active { left: 0; }
+    .slide-content { max-width: 800px; padding: 40px; text-align: left; }
+    h1, h2, h3 { color: #1d1d1f; }
+    h1 { font-size: 2.5em; margin-bottom: 20px; }
+    h2 { font-size: 2em; border-bottom: 2px solid #0071e3; padding-bottom: 10px; margin-top: 40px; }
+    h3 { font-size: 1.5em; color: #0071e3; }
+    ul { list-style-type: none; padding-left: 0; }
+    li { background-color: #f5f5f7; border-left: 5px solid #0071e3; margin-bottom: 15px; padding: 15px 20px; border-radius: 5px; }
+    p, li { font-size: 1.1em; line-height: 1.6; color: #555; }
+    strong { color: #1d1d1f; }
+    a { color: #0071e3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .navigation { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+    .nav-btn { background-color: #0071e3; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; margin-left: 10px; }
+    .nav-btn:hover { background-color: #0077ed; }
+</style>
+</head>
+<body>
+
+<div class="slider">
+    <!-- Slide 1: Key Takeaways -->
+    <div class="slide active">
+        <div class="slide-content">
+            <h1>關鍵見解與啟發 (Key Takeaways)</h1>
+            <ul>
+                <li><strong>AI 角色轉變：</strong>AI 從輔助工具進化為能獨立負責複雜任務的「代理人」(Agent)。</li>
+                <li><strong>RAG 的進階應用：</strong>結合圖譜資料庫，RAG 能處理需要嚴格邏輯與追溯性的專業領域，為跨領域應用提供範例。</li>
+                <li><strong>「多代理系統」是趨勢：</strong>透過多個專門 AI 代理協作，解決單一模型無法處理的複雜系統性問題，將是未來企業主流模式。</li>
+                <li><strong>商業價值巨大：</strong>時程縮短 85%、成本節省 35% 等數據，證明投資 AI 於開發流程能帶來明確的投資回報 (ROI)。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 2: Paper Info -->
+    <div class="slide">
+        <div class="slide-content">
+            <h1>論文資訊</h1>
+            <p><strong>論文名稱:</strong> Agentic RAG for Software Testing with Hybrid Vector-Graph and Multi-Agent Orchestration</p>
+            <p><strong>作者:</strong> Mohanakrishnan Hariharan, Seshu Babu Barma, Satish Arvapalli, Evangeline Sheela Arulanandam</p>
+            <p><strong>發表日期:</strong> 2025年10月16日</p>
+            <p><strong>論文連結:</strong></p>
+            <ul>
+                <li><a href="https://machinelearning.apple.com/research/hybrid-vector-graph" target="_blank">Apple Machine Learning Research</a></li>
+                <li><a href="https://arxiv.org/abs/2510.10824" target="_blank">arXiv (完整論文)</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3: Core Problem & Solution -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>核心目標與解決方案</h2>
+            <h3>核心目標</h3>
+            <p>解決品保工程師花費 <strong>30-40%</strong> 時間手動創建測試計畫、案例與腳本的痛點。</p>
+            <h3>解決方案：Agentic RAG 系統</h3>
+            <ul>
+                <li><strong>自主式 AI 代理:</strong> 自主規劃、編寫、組織軟體測試。</li>
+                <li><strong>檢索增強生成 (RAG):</strong> 結合外部知識庫，提升 LLM 準確性。</li>
+                <li><strong>混合向量圖譜:</strong> 透過向量+圖譜，確保需求的完整可追溯性。</li>
+                <li><strong>多代理協同:</strong> 使用 Gemini、Mistral 等模型，讓不同代理分工合作。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: Key Results -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>主要成果與亮點</h2>
+            <p>在企業級專案的實驗中，成果斐然：</p>
+            <ul>
+                <li><strong>準確度提升:</strong> 從 65% 提升到 <strong>94.8%</strong>。</li>
+                <li><strong>測試時程縮短:</strong> 減少了 <strong>85%</strong>。</li>
+                <li><strong>測試套件效率提升:</strong> 提高了 <strong>85%</strong>。</li>
+                <li><strong>成本節省:</strong> 預計可節省 <strong>35%</strong>。</li>
+                <li><strong>上線時間加速:</strong> 專案提早了 <strong>2 個月</strong> 上線。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Limitations -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>論文的局限性</h2>
+            <p>研究人員承認，目前的研究主要集中在特定環境：</p>
+            <ul>
+                <li>員工系統</li>
+                <li>財務系統</li>
+                <li>SAP 環境</li>
+            </ul>
+            <p>因此，其結論要推廣到其他類型的軟體專案（如嵌入式系統、移動應用等）還需要進一步的驗證。</p>
+        </div>
+    </div>
+</div>
+
+<div class="navigation">
+    <button class="nav-btn" onclick="changeSlide(-1)">上一頁</button>
+    <button class="nav-btn" onclick="changeSlide(1)">下一頁</button>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') {
+            changeSlide(1);
+        } else if (e.key === 'ArrowLeft') {
+            changeSlide(-1);
+        }
+    });
+
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>

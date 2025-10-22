@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Agentic RAG 論文分析 - 導航</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        .info p {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .slides-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .slide-link {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .slide-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .slide-number {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .slide-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .start-btn {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .start-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍎 Apple Agentic RAG 論文分析</h1>
+        <p class="subtitle">Agentic RAG for Software Testing with Hybrid Vector-Graph and Multi-Agent Orchestration</p>
+        
+        <div class="info">
+            <p><strong>✍️ 作者：</strong>Mohanakrishnan Hariharan, Seshu Babu Barma, Satish Arvapalli, Evangeline Sheela Arulanandam</p>
+            <p><strong>📅 發表日期：</strong>2025年10月16日</p>
+            <p><strong>🔗 論文連結：</strong><a href="https://machinelearning.apple.com/research/hybrid-vector-graph" style="color: #667eea; text-decoration: none;">Apple Machine Learning Research</a></p>
+            <p><strong>📄 投影片數：</strong>9 張</p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="slide_01_by_claude4.5.html" class="start-btn">▶ 開始簡報</a>
+        </div>
+
+        <h2 style="margin-top: 40px; color: #2c3e50;">投影片導航</h2>
+        <div class="slides-grid">
+            <a href="slide_01_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">01</div>
+                <div class="slide-title">封面</div>
+            </a>
+            <a href="slide_02_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">02</div>
+                <div class="slide-title">核心重點摘要</div>
+            </a>
+            <a href="slide_03_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">03</div>
+                <div class="slide-title">實驗結果對比</div>
+            </a>
+            <a href="slide_04_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">04</div>
+                <div class="slide-title">系統架構</div>
+            </a>
+            <a href="slide_05_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">05</div>
+                <div class="slide-title">四階段方法論</div>
+            </a>
+            <a href="slide_06_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">06</div>
+                <div class="slide-title">應用場景</div>
+            </a>
+            <a href="slide_07_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">07</div>
+                <div class="slide-title">競爭態勢</div>
+            </a>
+            <a href="slide_08_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">08</div>
+                <div class="slide-title">行動方案</div>
+            </a>
+            <a href="slide_09_by_claude4.5.html" class="slide-link">
+                <div class="slide-number">09</div>
+                <div class="slide-title">總結與建議</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,580 @@
+
+================================================================================
+Page 1
+================================================================================
+
+Agentic RAG for Software Testing with Hybrid Vector-
+Graph and Multi-Agent Orchestration
+“Mohanakrishnan Hariharan”, “Seshu Barma”, “Satish
+Arvapalli” and “Evangeline Sheela”
+Department of Corporate Systems Engineering
+Apple
+Austin, TX 78641, USA
+{m_hariharan, sarvapalli, barma_sb,
+evangelinesheela_arulanandam}@apple.com
+Abstract—We present an approach to software testing These limitations become particularly pronounced in enterprise
+automation using Agentic Retrieval-Augmented Generation software testing, where maintaining traceability between
+(RAG) systems for Quality Engineering (QE) artifact
+requirements, test cases, and business logic is paramount for
+creation. We combine autonomous AI agents with hybrid
+regulatory compliance and quality assurance.
+vector-graph knowledge systems to automate test plan, case,
+and QE metric generation. Our approach addresses
+A. Problem Statement
+traditional software testing limitations by leveraging LLMs
+such as Gemini and Mistral, multi-agent orchestration, and Current software testing methodologies face several critical
+enhanced contextualization. The system achieves remarkable challenges:
+accuracy improvements from 65% to 94.8% while ensuring
+• Manual Artifact Creation: QEs spend excessive time on
+comprehensive document traceability throughout the quality
+repetitive documentation tasks rather than strategic testing
+engineering lifecycle. Experimental validation of enterprise
+activities
+Corporate Systems Engineering and SAP migration projects
+demonstrates an 85% reduction in testing timeline, an 85% • Context Loss: Traditional RAG systems fail to maintain
+improvement in test suite efficiency, and projected 35% cost critical business relationships and technical dependencies
+savings, resulting in a 2-month acceleration of go-live. • Limited Scalability: Manual approaches cannot scale
+Index Terms—agentic systems, retrieval-augmented with the complexity of modern enterprise systems
+generation, software testing, quality engineering, multi- • Traceability Gaps: Lack of comprehensive traceability
+agent orchestration, hybrid vector-graph, test automation,
+between requirements, test cases, and execution results
+SAP testing, enterprise systems
+• Knowledge Silos: Historical testing knowledge remains
+trapped in individual expertise rather than organizational
+assets
+B. Research Contributions
+I. INTRODUCTION
+This paper introduces a novel Agentic RAG framework
+Software testing in enterprise environments faces challenges
+specifically designed for software testing automation with the
+due to complex data and business requirements. Quality
+following key contributions:
+Engineers (QEs) spend 30-40% of their time creating
+foundational testing artifacts, such as test plans, cases, and 1) Hybrid Vector-Graph Architecture: A knowledge
+automation scripts. This manual approach causes significant representation system that combines semantic similarity
+bottlenecks in software development lifecycles, particularly in search with relationship-aware graph traversal to
+complex enterprise systems such as SAP implementations, maintain business logic context
+where intricate business logic and technical dependencies 2) Multi-Agent Orchestration: Specialized autonomous
+create exponential complexity. agents for different aspects of test generation, including
+Large Language Models (LLMs) and Generative Artificial planning, case creation, and validation
+Intelligence have opened new possibilities for automating 3) Enhanced Contextualization: Advanced prompt
+quality engineering processes. However, traditional approaches engineering frameworks that preserve critical business
+face limitations like hallucination, context-poor generation, and relationships during test artifact generation
+loss of critical business relationships during retrieval. 4) Comprehensive Traceability: Bidirectional relationship
+tracking throughout the entire quality engineering life
+cycle
+
+================================================================================
+Page 2
+================================================================================
+
+and test suite optimization [5]. However, these approaches
+5) Enterprise Validation: Real-world validation on large-
+typically focus on structural testing aspects and fail to address
+scale SAP migration projects demonstrating significant
+the semantic understanding required for enterprise business
+productivity improvements
+logic validation.
+C. Methodology Overview
+B. Retrieval-Augmented Generation Systems
+Our approach represents a systematic evolution from
+The foundational work by Lewis et al. [2] introduced
+traditional RAG systems through four progressive stages: Basic
+Retrieval-Augmented Generation (RAG) as a method for
+RAG->Vector Search->Hybrid RAG->Agentic Systems.
+combining parametric and non-parametric knowledge in
+This progression demonstrates measurable accuracy
+language models. This approach has been widely adopted for
+improvements while maintaining complete document
+knowledge-intensive tasks, but traditional RAG
+traceability that fundamentally transforms solution outcomes.
+implementations suffer from context fragmentation and
+The core innovation lies in combining autonomous AI agents
+relationship loss during retrieval processes.
+with hybrid vector-graph knowledge systems, prompt
+Recent improvements include Fusion-in-Decoder (FiD) [6],
+engineering frameworks, and complete traceability chains. This
+which processes multiple retrieved passages simultaneously,
+integration enables the system to understand not just individual
+and Self-RAG [7], which incorporates self-reflection
+requirements but the relationships that define enterprise
+capabilities. However, these approaches remain limited in their
+software behavior.
+ability to maintain complex business relationships and
+D. Paper Organization technical dependencies critical for software testing scenarios.
+Karpukhin et al. [8] demonstrate the effectiveness of dense
+The remainder of this paper is structured as follows: Section
+passage retrieval using BERT embeddings, showing superior
+I reviews related work in AI-powered software testing and
+performance compared to sparse retrieval methods. While
+retrieval-augmented generation. Section II presents our
+effective for general question-answering tasks, dense retrieval
+comprehensive Agentic RAG methodology, including the
+alone fails to capture the hierarchical and interconnected nature
+hybrid vector-graph architecture and multi-agent orchestration
+of software testing requirements.
+framework. Section III details the implementation architecture
+with a specific focus on enterprise SAP testing scenarios. C. Multi-Agent Systems in Software Engineering
+Section IV presents experimental results from real-world The application of multi-agent systems in software
+deployments, including performance metrics and cost-benefit engineering has gained traction with the emergence of
+analysis. Section V concludes with future research directions language models. Yao et al. [9] introduce the Re-Act
+and implications for the software testing industry. framework, combining reasoning and acting in language
+Our work addresses a critical gap in current software testing model prompting for improved problem-solving capabilities.
+automation by providing a comprehensive, enterprise-ready This work provides foundational concepts for agent-based
+solution that maintains the contextual understanding necessary approaches but lacks specialization for software testing
+for high-quality test artifact generation while achieving high domains. Recent work on tool-augmented language models
+levels of automation and efficiency. [10] demonstrates the potential for AI systems to learn to
+use external tools autonomously. However, these approaches
+I. RELATED WORK
+have not been systematically applied to the complex
+A. AI-Powered Software Testing
+orchestration requirements of enterprise software testing
+The integration of artificial intelligence in software testing workflows.
+has evolved significantly over the past decade. Trifunova et al. AutoGPT and similar autonomous agent systems have
+[1] provide a comprehensive review of AI’s transformational shown promise in task decomposition and execution, but their
+potential in testing and quality assurance, highlighting how AI application to software testing has been limited to simple
+automates traditional tasks, including test case generation, scenarios without the context management required for
+defect prediction, and regression testing. However, their work enterprise environments.
+identifies critical gaps in actionable methodologies for
+D. Enterprise Software Testing
+achieving model interpretability and lacks comprehensive
+Traditional approaches to enterprise software testing,
+frameworks for enterprise-scale implementation.
+particularly in SAP environments, rely heavily on manual
+Liu et al. [3] propose Extended Regular Expression-based
+processes and domain expertise [11]. The complexity of SAP
+testing for software systems, focusing on modeling program
+systems, with their intricate business logic and extensive
+behavior with ERE for executable path and test case generation.
+customization possibilities, creates unique challenges for
+While their approach presents innovative FSM modeling
+automated testing approaches.
+improvements, it suffers from limited applicability to modern
+Existing SAP testing tools, such as SAP Test Acceleration
+software complexities and missed opportunities for GenAI
+and Optimization (TAO) and Tricentis Tosca, provide some
+integration in automated model construction.
+automation capabilities but remain limited in their ability to
+Recent advances in machine learning for software testing
+understand business context and generate comprehensive test
+have shown promise in automated test case generation [4]
+scenarios automatically [12].
+
+================================================================================
+Page 3
+================================================================================
+
+The challenge of maintaining test case relevance during Agentic RAG Framework for Software Testing
+system migrations and upgrades has been addressed through AI-Powered Quality Engineering Architecture
+various methodologies [13], but these approaches typically
+Multi-Layer Prompt Architecture Enhanced RAG Architecture Agentic Architecture
+require significant manual intervention and expert knowledge. System-Level Prompts M Ve u c lti t - o E r m S b e ed a d rc in h g R G e r l a a p tio h n I s n h t ip e l M lig od e e n li c n e g Query Planning Agent Vector Search Agent
+Hierarchical Retrieval Context Synthesis
+Domain-Specific Prompts Knowledge Graph Agent Context Assembly Agent
+E. Knowledge Graph Applications in Testing Context-Aware Prompts Hybrid Vector-Graph Processing Generation Orchestrator
+Dynamic Optimization Engine Contextual Coherence Engine Multi-Agent Workflow Coordination
+Recent research has explored the application of knowledge
+Complete Traceability Architecture Quality Engineering Outcomes
+graphs for software testing [14]. These approaches focus on
+Document-Level Requirement-Level Semantic Dependency Predictive Change Coverage Gap
+Traceability Traceability Traceability Traceability Impact Analysis Identification
+representing software artifacts and their relationships in graph
+structures to support various testing activities. However, Forward Impact Analysis Backward Impact Analysis Enhan M c e e t d ric Q s uality Pro M a a c n ti a v g e e m Q e u n a t lity
+Bidirectional Impact Prediction Engine Comprehensive Solution Quality Framework
+existing work has not addressed the integration of knowledge
+graphs with modern LLM-based generation systems. Core Processing Engine
+Requirement Test Case Risk-Based Quality
+Graph-based test case generation has shown promise in Analysis Engine Generation Prioritization Validation
+maintaining relationship awareness during test creation [15], Integrated Quality Engineering Pipeline
+but these approaches typically require manual graph
+Architecture Components Legend
+construction and lack the semantic understanding capabilities Multi-Layer Prompts Enhanced RAG Agentic System Traceability Quality Outcomes Core Processing
+Data Flow
+of modern language models. IEEE Standard Architecture Representation - Enterprise Quality Engineering Framework
+F. Limitations of Current Approaches
+Despite significant advances in individual areas, current Fig. 1. Agentic RAG Framework Architecture for Software Testing showing
+the progression from Basic RAG to multi-agent orchestration with hybrid
+approaches suffer from several critical limitations:
+vector-graph knowledge systems.
+• Context Fragmentation: Traditional RAG systems lose
+B. Multi-Agent Orchestration Layer
+critical business relationships during retrieval processes
+• Limited Scalability: Manual approaches cannot handle The orchestration layer employs specialized autonomous
+the complexity of modern enterprise systems agents, each optimized for specific aspects of software testing
+• Lack of Specialization: General-purpose AI systems lack artifact generation:
+the domain-specific knowledge required for effective Agent Algorithm:
+software testing
+1) Input: Requirements R, Business Logic B, Historical
+• Insufficient Traceability: Existing systems fail to
+Data H
+maintain comprehensive traceability throughout the
+2) Output: Test Plan / Cases P
+testing lifecycle
+3) context ← hybrid retrieval(R, B, H)
+• Enterprise Integration Gaps: Most research focuses
+4) scope ← analyze testing scope(context)
+on isolated scenarios rather than integrated enterprise
+5) objectives ← extract objectives(context, scope)
+workflows
+6) strategy ← generate strategy(objectives, H)
+Our proposed Agentic RAG framework addresses these 7) P ← synthesize plan(scope, objectives, strategy)
+limitations by providing a comprehensive, enterprise-ready 8) return P
+solution that combines the strengths of retrieval-augmented
+1) Legacy Test Analysis & Business Intent Agent:
+generation, multi-agent orchestration, and hybrid knowledge
+Examines historical test cases to understand underlying
+representation specifically designed for software testing
+business requirements and validation objectives
+automation.
+2) Functional Change Mapping Agent: Maps business
+II. METHODOLOGY
+requirements to specific application functionality and
+A. Agentic RAG Framework Architecture identifies changes from previous implementations.
+Our Agentic RAG framework represents a shift from 3) Integration Point Identification Agent: Discovers
+traditional retrieval-augmented generation systems through a interfaces between systems, modules, and processes that
+systematic four-stage evolution: Basic RAG --+ Vector require specific testing attention.
+Search Hybrid RAG Agentic Systems. This
+--+ --+ 4) Modernized Test Case Agent: Creates test cases using
+progression demonstrates measurable accuracy improvements
+contemporary methodologies, patterns, and best
+from 65% (basic RAG) to 94.8% (Agentic RAG) while
+practices.
+establishing comprehensive document traceability.
+The framework consists of four primary components: the 5) Compliance Validation Agent: Ensures test cases
+Multi-Agent Orchestration Layer, Hybrid Vector-Graph adhere to organizational standards and regulatory
+Knowledge System, Enhanced Contextualization Engine, and requirements.
+Comprehensive Traceability Framework.
+
+================================================================================
+Page 4
+================================================================================
+
+6) Conflict Resolution Engine: The engine employs a rule-
+C. Hybrid Vector-Graph Knowledge System
+based priority system with 15 distinct resolution strategies to
+The knowledge system combines the semantic similarity
+handle conflicting information from multiple sources:
+capabilities of vector databases with the relationship-aware
+• Source credibility weighting based on historical accuracy
+traversal of graph databases to maintain critical business
+• Temporal relevance prioritization for recent updates
+context during retrieval processes.
+• Domain expert validation for critical conflicts
+D. Technical Specifications:
+• Automated escalation for unresolvable conflicts
+1) Vector Database Layer: Platform: Single Store with
+distributed architecture supports horizontal scaling across
+F. Comprehensive Traceability Framework
+multiple nodes
+The traceability framework maintains bidirectional
+• It supports 384, 768, and 1024-dimensional vectors
+relationships throughout the entire quality engineering
+• It uses Similarity algorithms such as Cosine, Euclidean,
+lifecycle, enabling complete visibility into transformation
+and Dot Product
+decisions and regulatory compliance demonstration.
+• The Semantic similarity threshold is 0.82 and above for
+1) Traceability Matrix Generation: The system
+candidate selection
+automatically generates and maintains traceability matrices
+• The Sentence Transformer is integrated for natural
+linking:
+language to embedding conversion
+• Requirements for test cases
+2) Graph Database Layer: Platform: TigerGraph Cloud
+• Test cases to execution results
+with native parallel processing capabilities
+• Business logic for validation scenarios
+• The GSQL query engine is deployed with optimized graph
+• Change requests to impact analysis
+traversal algorithms
+• There are 15+ predefined edge types with weighted 2) Change Impact Analysis: Advanced change impact
+importance scoring for candidate selection analysis capabilities enable predictive assessment of
+modification effects across the entire testing ecosystem. The
+• The distributed graph is processed with horizontal node
+system analyzes proposed changes and automatically identifies
+expansion
+affected test cases, execution scenarios, and validation
+• There is support for BFS, DFS, shortest path, and
+requirements.
+PageRank algorithms
+• 16GB heap allocation is configured with optimized
+G. Progressive Enhancement Methodology
+garbage collection tuning
+The relationship modeling includes 15 distinct edge types Our methodology follows a systematic progression through
+representing different aspects of software testing relationships: four distinct stages, each building upon the previous level’s
+capabilities:
+• Requires: Functional dependencies between components
+1) Stage 1: Basic RAG (65% Accuracy): Traditional
+• Validates: Test cases that validate specific requirements
+retrieval-augmented generation with simple document retrieval
+• Depends on: Technical dependencies between system
+and basic prompt engineering.
+components
+2) Stage 2: Vector Search Enhancement (78% Accuracy):
+• Impacts: Change impact relationships
+Integration of semantic similarity search using dense vector
+• Covers: Coverage relationships between tests and
+representations with improved context retrieval mechanisms.
+requirements
+3) Stage 3: Hybrid RAG (87% Accuracy): A Combination
+E. Enhanced Contextualization Engine of vector similarity search with graph-based relationship
+The contextualization engine addresses the critical limitation traversal to maintain business logic context.
+of context-poor generation in traditional RAG systems through 4) Stage 4: Agentic Systems (94.8% Accuracy): Full multi-
+context assembly and conflict resolution mechanisms. agent orchestration with specialized agents, comprehensive
+1) Context Assembly Process: The system employs a traceability, and advanced contextualization mechanisms.
+multi-stage context assembly process: This progressive approach enables organizations to
+2) Semantic Retrieval: Vector similarity search identifies implement the framework incrementally while achieving
+semantically relevant documents measurable improvements at each stage, reducing
+3) Relationship Traversal: Graph traversal expands implementation risk while maximizing return on investment.
+context with related business logic and dependencies
+4) Context Synthesis: Parallel processing across eight III. IMPLEMENTATION
+worker threads synthesizes a comprehensive context
+A. System Architecture and Technical Stack
+5) Quality Validation: Seven-layer validation pipeline
+ensures context quality and completeness The Agentic RAG framework is implemented as a
+distributed, containerized system designed for enterprise-scale
+deployment. The architecture leverages modern cloud-native
+technologies to ensure scalability, reliability, and
+maintainability.
+
+================================================================================
+Page 5
+================================================================================
+
+1) Business Logic Extraction: The system employs two
+extraction mechanisms to understand Enterprise and SAP
+business processes:
+• Vector Database (Strain Store): Transforms unstructured
+text into high-dimensional vectors that capture semantic
+relationships, making the knowledge searchable by
+meaning rather than just keywords
+• TigerGraph Database (Relationship Modeling): Creates
+a graph representation that explicitly models relationships
+between entities, particularly mapping Old SAP to New
+SAP components, processes, and configurations
+The dual-database approach provides distinct advantages. The
+vector database excels at semantic similarity searches across
+unstructured content. The TigerGraph database captures
+structured relationships and dependencies, especially critical
+for understanding how SAP components interconnect.
+F. Prompt Engineering Framework
+The implementation includes a prompt engineering
+framework specifically designed for software testing scenarios.
+Multi-Layer Prompt Architecture: The system employs a
+Fig. 2. Complete System Architecture showing the integration of vector hierarchical prompt structure with five distinct layers:
+databases, graph systems, LLM orchestration, and enterprise SAP connectivity. 1) Context Layer: Establishes domain context and testing
+objectives
+B. Technical Specifications: 2) Specification Layer: Provides detailed requirements and
+constraints
+• Microservices architecture is set up with health monitoring,
+3) Template Layer: Defines output format and structure
+automatic failover, independent scaling, and resource
+requirements
+allocation optimization capabilities based on workload
+4) Validation Layer: Includes quality criteria and
+patterns. Environments included support for development,
+validation rules
+testing, staging, and production.
+5) Enhancement Layer: Incorporates historical knowledge
+• Container Orchestration: All services were containerized in
+and best practices
+the Docker platform with Kubernetes orchestration for
+6) Dynamic Prompt Generation: Prompts are dynamically
+production deployments
+generated based on task complexity assessment, available
+• Large Language Model Integration: The system integrates context richness, historical performance patterns, user
+multiple LLMs to optimize performance across different preference profiles, and enterprise compliance
+testing scenarios: requirements
+C. Model Selection Strategy: G. Real-World Deployment: SAP S/4HANA Migration
+Dynamic model routing based on task complexity, context We present a detailed case study of the framework’s
+requirements, and performance optimization. Simple test case deployment in a large-scale SAP S/4HANA migration and
+generation utilizes Mistral 7B for efficiency, while complex Corporate Systems Engineering projects involving 25,000
+business logic analysis leverages Gemini Pro for superior existing test cases that require creation, transformation, and
+reasoning capabilities and enhanced context understanding. optimization.
+1) Project Scope and Challenges: Enterprise Context:
+D. SAP Integration Framework
+• Customization of T-codes by the company
+The implementation includes specialized components for
+• 50+ teams with unique project needs
+SAP enterprise system integration, addressing the unique
+• Standard format for test cases across the company
+challenges of SAP testing environments.
+• No sensitive data to be sent to AI systems
+E. Data Ingestion and Dual-Database Storage: • Legacy ECC 6.0 to S/4HANA migration timeline: 18
+months
+• Legacy Test Repository: Contains historical test cases, often 2) Technical Challenges:
+with valuable institutional knowledge but possibly outdated • Complex business logic relationships across 15 SAP
+formats modules
+• SAP Documentation: Official technical documentation • Integration with 200+ external systems and interfaces
+covering standard functionality and configurations • Regulatory compliance traceability requirements
+• Business Process Maps: Documentation of how business • PII data to be redacted
+processes flow through the system
+H. Quality Assurance and Validation
+• Configuration Guides: Detailed technical settings
+The implementation includes comprehensive quality
+and parameters for the SAP implementation
+
+================================================================================
+Page 6
+================================================================================
+
+assurance mechanisms to ensure enterprise-grade
+reliability:
+• Syntax Validation ensures proper format and structure
+• Semantic Validation verifies logical consistency and
+completeness
+• Business Logic Validation confirms adherence to
+business rules
+• Traceability Validation ensures complete requirement
+coverage
+• Compliance Validation verifies regulatory requirement
+adherence
+• Performance Validation confirms acceptable execution
+characteristics
+• Integration Validation ensures compatibility with
+Fig. 3. Accuracy progression through the four-stage Agentic RAG methodology
+existing systems showing improvements from 65% (Basic RAG) to 94.8% (Full Agentic System).
+This comprehensive implementation framework ensures
+reliable, scalable, and maintainable deployment of the Agentic 2) Quality Assessment Framework: We developed a
+RAG system in complex enterprise environments while comprehensive quality assessment framework evaluating five
+maintaining the flexibility to adapt to specific organizational key dimensions:
+requirements and constraints.
+TABLE I
+IV. EXPERIMENTAL RESULTS AND EVALUATION QUALITY ASSESSMENT RESULTS ACROSS DIFFERENT APPROACHES
+A. Experimental Setup
+We conducted a comprehensive evaluation of the Agentic Approach Accuracy Completeness Consistency Traceability Overall
+RAG framework across multiple dimensions, including Manual 92.30% 85.70% 78.20% 73.60% 80.40%
+Testing
+accuracy, efficiency, scalability, and enterprise deployment
+Template- 76.5% 82.10% 89.30% 89.30% 79.78%
+outcomes. The evaluation encompasses both controlled
+Based
+laboratory experiments and real-world enterprise deployments. Basic RAG 65.2% 72.80% 68.90% 68.90% 63.05%
+GPT-4 81.7% 79.40% 73.60% 52.80% 71.88%
+1) Evaluation Datasets: Synthetic Test Dataset: 5,000 carefully
+Direct SAP 84.2% 88.50% 91.70% 78.90% 85.83%
+curated test scenarios across different complexity levels: TAO
+• Simple functional tests (1,000 cases) Agentic 94.8% 96.20% 95.70% 98.10% 96.20%
+RAG
+• Complex business logic scenarios (1,000 cases)
+• Integration testing scenarios (1,000 cases)
+• Regression testing suites (2,000 cases)
+Enterprise SAP Dataset: Real-world data from SAP S/4HANA
+migration project:
+• 1000 existing test cases requiring transformation
+• 15 SAP modules with complex interdependencies
+• 100+ custom T-codes
+• Regulatory compliance requirements across jurisdictions
+2) Baseline Comparisons: We compared against Agentic RAG
+framework against traditional manual testing approaches, basic
+RAG systems, and existing automated testing
+B. Accuracy and Quality Metrics
+Fig. 4. Efficiency comparison showing dramatic reductions in project timeline
+and savings through Agentic RAG implementation.
+1) Progressive Accuracy Improvement: Accuracy
+improvements were achieved through a four-stage
+C. Efficiency and Performance Results
+methodology
+• Basic RAG: 65.2% accuracy with significant context loss Quantitative analysis revealed substantial productivity
+• Vector Search: 78.4% accuracy with improved semantic improvements:
+understanding • Time Reduction: 85% reduction in artifact creation time
+• Hybrid RAG: 87.1% accuracy with relationship (from 240 hours to 36 hours per project phase)
+preservation • Cost Savings: 35% total savings across the three projects
+• Agentic System: 94.8% accuracy with comprehensive • Accelerated Delivery: 16-month acceleration in go-live
+orchestration timelines
+• Test Plan Generation: 94.8% accuracy vs. 65% (basic • Defect Detection: 35% improvement in defect detection
+RAG) and 78% (manual baseline) rates during system testing
+• Test Case Generation: 92.3% accuracy with 97% • Test Coverage: 25000 Test cases created with 98.7%
+requirement traceability coverage functional coverage vs. 84% manual baseline
+
+================================================================================
+Page 7
+================================================================================
+
+• Regression Prevention: 92% reduction in production VI. ACKNOWLEDGMENT
+defects post-deployment The authors would like to thank the enterprise software
+• Comprehensive Traceability: Established bidirectional testing teams and SAP migration project stakeholders who
+relationship tracking throughout the entire quality provided valuable feedback and validation data for this
+engineering lifecycle
+research.
+D. Ablation Studies REFERENCES
+[1] A. Trifunova, B. Jakimovski, I. Chorbev, and P. Lameski, “A in softw-
+We conducted ablation studies to understand the contribution of
+are testing: Revolutionizing quality assurance,” IEEE Xplore Digital
+different framework components: Library, 2024.
+TABLE II [2] P. Lewis, E. Perez, A. Piktus, F. Petroni, V. Karpukhin, N. Goyal,
+COMPONENT CONTRIBUTION ANALYSIS: H. Ku¨ttler, M. Lewis, W.-t. Yih, T. Rockta¨schel et al., “Retrieval-
+augmented generation for knowledge-intensive NLP tasks,” Advances in
+Without Accuracy Degradation
+neural information processing systems, vol. 33, pp. 9459–9474, 2020.
+Multi-Agent Orchestration 12.3% [3] P. Liu, J. Ai, and Z. Xu, “A study for extended regular expression-based
+Hybrid Vector-Graph 15.7% testing,” in IEEE Conference on Software Testing. IEEE, 2023.
+[4] S. Anand, E. K. Burke, T. Y. Chen, J. Clark, M. B. Cohen,
+Enhanced Contextualization 18.2%
+W. Grieskamp, M. Harman, M. J. Harrold, and P. McMinn, “An
+Traceability Framework 8.9% orchestrated survey of methodologies for automated software test case
+generation,” Journal of Systems and Software, vol. 86, no. 8, pp. 1978–
+2001, 2013.
+These results confirm that all major components contribute [5] S. Yoo and M. Harman, “Regression testing minimization, selection and
+significantly to overall system performance, with enhanced prioritization: a survey,” Software testing, verification and reliability,
+vol. 22, no. 2, pp. 67–120, 2012.
+contextualization providing the largest individual contribution.
+[6] G. Izacard and E. Grave, “Leveraging passage retrieval with generative
+models for open domain question answering,” in Proceedings of the 16th
+V. CONCLUSION AND FUTURE WORK Conference of the European Chapter of the Association for
+A. Summary of Contributions Computational Linguistics: Main Volume, 2021, pp. 874–880.
+[7] A. Asai, Z. Wu, Y. Wang, A. Sil, and H. Hajishirzi, “Self-rag: Learning
+The Agentic RAG framework presented in this paper to retrieve, generate, and critique through self-reflection,” arXiv preprint
+addresses critical challenges in enterprise software testing arXiv:2310.11511, 2023.
+[8] V. Karpukhin, B. Oguz, S. Min, P. Lewis, L. Wu, S. Edunov, D. Chen,
+through multi-agent orchestration and hybrid knowledge
+and W.-t. Yih, “Dense passage retrieval for open-domain question
+representation. Our experimental validation demonstrates answering,” in Proceedings of the 2020 Conference on Empirical
+significant improvements in accuracy (94.8% vs. 65% baseline), Methods in Natural Language Processing (EMNLP), 2020, pp. 6769–
+6781.
+productivity (85% time reduction), and quality metrics (35%
+[9] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. Narasimhan, and Y. Cao,
+improvement in defect detection). “React: Synergizing reasoning and acting in language models,” arXiv
+Our real-world validation in large-scale Enterprise and SAP preprint arXiv:2210.03629, 2022.
+[10] T. Schick, J. Dwivedi-Yu, R. Dess`ı, R. Raileanu, M. Lomeli, L.
+migration projects provides evidence that creates a robust
+Zettlemoyer, N. Cancedda, and T. Scialom, “Toolformer: Language
+foundation for comprehensive quality engineering automation. models can teach themselves to use tools,” arXiv preprint
+arXiv:2302.04761, 2023.
+B. Limitations and Considerations [11] H. M. Sneed, Testing SAP R/3: A Manager’s Step-by-Step Guide.
+While our framework demonstrates significant improvements, Addison-Wesley Professional, 2005.
+[12] R. Winter and B. Strauch, “Sap testing: A comprehensive guide,” SAP
+several limitations warrant consideration:
+Press, 2018.
+• Domain Specialization: Current implementation focuses on [13] M. Leotta, D. Clerissi, F. Ricca, and P. Tonella, “Approaches and tools
+for automated end-to-end web testing,” in Advances in Computers, vol.
+Employee Systems, Finance, and SAP environments;
+101. Elsevier, 2016, pp. 193–237.
+generalization to other enterprise systems requires additional
+[14] M. Pan, T.-H. Huang, S. Wang, and J. Zhu, “Knowledge graphs for
+training data software testing: A systematic literature review,” Journal of Systems and
+• Knowledge Base Maintenance: Hybrid knowledge bases Software, vol. 186, p. 111186, 2022.
+[15] W. Li, L. Zhang, X. Chen, and H. Mei, “Graph-based test case generation
+require ongoing maintenance as business processes evolve
+for object-oriented software,” in Proceedings of the International
+• Integration Complexity: Enterprise system integration Conference on Software Engineering, 2021, pp. 445–455.
+introduces deployment complexities that may require [16] Mohanakrishnan Hariharan, “Semantic Mastery: Enhancing LLMs with
+Advanced Natural Language Understanding,” arXiv preprint
+specialized expertise
+arXiv:2504.00409.
+C. Future Research Directions [17] Seshu Babu Barma, Mohanakrishnan Hariharan, Satish Arvapalli,
+“Enhancing Software Quality Assurance with an Adaptive Differential
+Future work will focus on addressing current limitations, Evolution-based Quantum Variational Autoencoder-Transformer
+expanding domain coverage, developing automated knowledge Model,” arXiv preprint arXiv:2503.16335
+base maintenance mechanisms, and creating simplified
+deployment frameworks for broader enterprise adoption.
+• Feedback loop: Implementing reinforcement learning
+mechanisms that optimize agent performance based on
+feedback from test execution. This will create continuous
+improvement loops that enhance accuracy and efficiency
+without manual intervention.
+• Multi-Modal Intelligence Expansion: Visual Processing of
+UI/UX mockups, audio/video recordings, code repositories
+for contextual understanding beyond text-based
+requirements
